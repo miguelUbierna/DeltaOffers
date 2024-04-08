@@ -1,8 +1,18 @@
 import requests
 from bs4 import BeautifulSoup
+import time
+from datetime import datetime
+import sys
+
+sys.path.append('C:\\Users\\Usuario\\Desktop\\DeltaOffers')
 
 
-class UBUScraper:
+# La guía de estilos Pep8 indica que los 'imports' tienen que estar al inicio del fichero, sin embargo, hay ocasiones en las que nos interesa 'saltarnos' esa guía de estilos.
+# Este es uno de los casos y es por ello que a las líneas que no se quiera que sigan esta guía se las podrá agregar el siguiente comentario:
+from Interfaces.scrapingInterface import ScrapingInterface  # nopep8
+
+
+class UBUScraper(ScrapingInterface):
     def __init__(self):
         self.filas = []
         self.ubu_general = []
@@ -25,7 +35,9 @@ class UBUScraper:
         return respuesta_subpagina
 
     def obtener_descripciones(self, contenedor):
-        if contenedor.find('div', class_='field-item even', property='content:encoded').p == None:
+        # Controlo en el caso de que la descripción no aparezca en la web a la que hago el scraping. Este tipo de condiciones son muy útiles para asegurarnos
+        # de que aunque en la web falten determinados campos, nosotros nos aseguraremos una estructura uniforme.
+        if contenedor.find('div', class_='field-item even', property='content:encoded') == None:
             descripcion = 'No especificada'
         else:
             descripcion = contenedor.find('div', class_='field-item even', property='content:encoded').p.get_text(
@@ -33,30 +45,50 @@ class UBUScraper:
         self.filas.append(descripcion)
 
     def obtener_fechas_convocatorias(self, contenedor):
-        fecha_convocatoria = contenedor.find(
-            'span', class_='date-display-single')['content']
-        self.filas.append(fecha_convocatoria)
+
+        if contenedor.find('span', class_='date-display-single') == None:
+            self.filas.append('No especificada')
+        else:
+            fecha_convocatoria = contenedor.find(
+                'span', class_='date-display-single')['content']
+            fecha_convocatoria = datetime.strptime(
+                fecha_convocatoria, "%Y-%m-%dT%H:%M:%S%z")
+            fecha_convocatoria_limpia = fecha_convocatoria.strftime("%Y-%m-%d")
+            self.filas.append(fecha_convocatoria_limpia)
 
     def obtener_plazos_solicitud(self, contenedor):
+
+        # Esta comprobación la hago debido que en ocasiones, en la web a la que estoy haciendo scraping, no me aparece la fecha de inicio de la solicutud del plazo de presentación.
         if str(contenedor.find('div', class_='field field-name-field-presentation-date field-type-datetime '
                                'field-label-above').find('span')['class']) != "['date-display-single']":
 
             fecha_inicio_solicitud = contenedor.find(
                 'span', class_='date-display-start')['content']
-            self.filas.append(fecha_inicio_solicitud)
+            fecha_inicio_solicitud = datetime.strptime(
+                fecha_inicio_solicitud, "%Y-%m-%dT%H:%M:%S%z")
+            fecha_inicio_limpia = fecha_inicio_solicitud.strftime("%Y-%m-%d")
+            self.filas.append(fecha_inicio_limpia)
 
             fecha_fin_solicitud = contenedor.find(
                 'span', class_='date-display-end')['content']
-            self.filas.append(fecha_fin_solicitud)
+            fecha_fin_solicitud = datetime.strptime(
+                fecha_fin_solicitud, "%Y-%m-%dT%H:%M:%S%z")
+            fecha_fin_limpia = fecha_fin_solicitud.strftime("%Y-%m-%d")
+            self.filas.append(fecha_fin_limpia)
 
         else:
-            self.filas.append('No Especificada')
+            self.filas.append('No especificada')
             fecha_fin_solicitud = contenedor.find('div', class_='field field-name-field-presentation-date '
                                                   'field-type-datetime field-label-above').find(
                 'span', class_='date-display-single')['content']
-            self.filas.append(fecha_fin_solicitud)
+            fecha_fin_solicitud = datetime.strptime(
+                fecha_fin_solicitud, "%Y-%m-%dT%H:%M:%S%z")
+            fecha_fin_limpia = fecha_fin_solicitud.strftime("%Y-%m-%d")
+            self.filas.append(fecha_fin_limpia)
 
     def obtener_convocantes(self, contenedor, convocante):
+
+        # En ocasiones, en la web el campo de convocantes sale vacio, por esta razón, añado a mi estructura un campo indicando que el convocante no se ha especificado.
         if contenedor.find('div', class_='field field-name-field-convener field-type-text-long field-label-above') == None:
             self.filas.append('No especificado')
         else:
@@ -67,6 +99,7 @@ class UBUScraper:
             self.filas.append(convocante)
 
     def obtener_destinatarios(self, contenedor):
+        # Compruebo que ese campo no este vacío. Si lo está, añado a mi estructura un texto explicativo.
         if contenedor.find('div', class_='field field-name-field-receiver field-type-text-long field-label-above') \
                 is not None:
             contenedor_destinatarios = contenedor.find(
@@ -80,6 +113,8 @@ class UBUScraper:
         categoria = contenedor.find(
             'div', class_='field-item odd').a.get_text(strip=True)
 
+        # Si encuentro una categoría atípica hasta lo que nos hemos encontrado hasta el momento en la web, indico que la categoría no está especificada.
+        # Hasta ahora no se han encontrado mas categorías con un formato concreto
         if categoria == 'Convocatorias personal docente' or categoria == 'Investigación: adscritas a proyectos':
             self.filas.append('PDI')
         elif categoria == 'Convocatorias PAS':
@@ -117,6 +152,9 @@ class UBUScraper:
 
                 if respuesta_subpagina.status_code == 200:
                     sub_soup = BeautifulSoup(respuesta_subpagina.text, 'lxml')
+
+                    # Hago esperas cada vez que accedo a hacer el scraping de las subpaginas para simular el comportamiento humano
+                    # time.sleep(3)
                     contenedores_subpagina = sub_soup.find_all('article')
 
                     for contenedor in contenedores_subpagina:
@@ -128,6 +166,7 @@ class UBUScraper:
                         self.obtener_categorias(contenedor)
                     self.obtener_universidad()
 
+                    # Con esto contrlo el hecho de mostrar las 10 primeras convocatorias cerradas por si fuese de interés para el usuario.
                     if self.filas[1] == 'EN PLAZO' or self.filas[1] == 'EN RESOLUCION':
                         self.añadir_fila()
                     elif self.filas[1] == 'CONVOCATORIA CERRADA':
@@ -145,32 +184,25 @@ class UBUScraper:
                 response.status_code}')
 
     def tabla_limpia(self):
+        # Función la cual es utilizada para realizar una limpieza de mi estructura de datos ante caracteres no deseados a la hora de realizar el scraping.
         for fila in self.ubu_general:
             for i, item in enumerate(fila):
                 fila[i] = item.replace('\xa0', ' ')
+                fila[i] = fila[i].replace('• ', ' ')
 
     def extraer_datos_paginas(self):
         contador_paginas = 0
         # Link para extraer los datos.
         link_ubu = 'https://www.ubu.es/trabaja-en-la-ubu'
+
+        # Con esto determino la condición de parada del proceso de scraping a la web de esta universidad.
         while self.contador_cerradas < 30:
             if contador_paginas == 0:
                 self.obtener_datos(link_ubu)
-                # Meter aqui algo para que rompa el bucle
             else:
                 link_ubu_siguientes_paginas = 'https://www.ubu.es/trabaja-en-la-ubu?field_term_interest_tid=109&page=' + \
                     str(contador_paginas)
                 self.obtener_datos(
                     link_ubu_siguientes_paginas)
                 link_ubu_siguientes_paginas = ''
-                # Meter aqui algo que rompa el bucle
             contador_paginas += 1
-
-
-scraper = UBUScraper()
-scraper.extraer_datos_paginas()
-# Una vez que se rompe el bucle, meter aqui algo para limpiar mi estructura
-print(scraper.ubu_general)
-print(len(scraper.ubu_general))
-print(len(scraper.ubu_general[0]))
-scraper.tabla_limpia()
