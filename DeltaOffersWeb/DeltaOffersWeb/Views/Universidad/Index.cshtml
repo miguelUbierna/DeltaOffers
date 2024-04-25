@@ -1,0 +1,225 @@
+﻿@using DeltaOffers.ViewModels
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@using X.PagedList.Mvc;
+
+@model UniversidadFiltroViewModel
+
+@{
+    var filtroCategoria = ViewData["FiltroCategoria"] as string;
+    var filtroUniversidad = ViewData["FiltroUniversidad"] as string;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Listado Universidades</title>
+</head>
+<body>
+    <div class="filtros">
+        <form asp-action="Index" asp-Controller="Universidad" method="get" >
+            <div class="campo_universidad">
+                Universidad:
+            </div>
+            <select class="form_universidad" name="Universidad">
+                @if (string.IsNullOrEmpty(filtroUniversidad))
+                {
+                    <option value="" selected>Todas</option>
+                }
+                else
+                {
+                    <option value="">Todas</option>
+                }
+
+                @if (filtroUniversidad == "Universidad de Burgos")
+                {
+                    <option value="Universidad de Burgos" selected>Universidad de Burgos</option>
+                }
+                else
+                {
+                    <option value="Universidad de Burgos">Universidad de Burgos</option>
+                }
+
+                @if (filtroUniversidad == "Universidad de Valladolid")
+                {
+                    <option value="Universidad de Valladolid" selected>Universidad de Valladolid</option>
+                }
+                else
+                {
+                    <option value="Universidad de Valladolid">Universidad de Valladolid</option>
+                }
+
+                @if (filtroUniversidad == "Universidad de León")
+                {
+                    <option value="Universidad de León" selected>Universidad de León</option>
+                }
+                else
+                {
+                    <option value="Universidad de León">Universidad de León</option>
+                }
+            </select>
+            <div class="campo_categoria">
+                Categoria:
+            </div>
+            <select class="form_categoria" name="Categoria">
+                @if (string.IsNullOrEmpty(filtroCategoria))
+                {
+                    <option value="" selected>Todas</option>
+                }
+                else
+                {
+                    <option value="">Todas</option>
+                }
+
+                @if (filtroCategoria == "PDI")
+                {
+                    <option value="PDI" selected>PDI</option>
+                }
+                else
+                {
+                    <option value="PDI">PDI</option>
+                }
+
+                @if (filtroCategoria == "PAS")
+                {
+                    <option value="PAS" selected>PAS</option>
+                }
+                else
+                {
+                    <option value="PAS">PAS</option>
+                }
+
+                @if (filtroCategoria == "GENERAL")
+                {
+                    <option value="GENERAL" selected>GENERAL</option>
+                }
+                else
+                {
+                    <option value="GENERAL">GENERAL</option>
+                }
+            </select>
+            <div class="campo_plazo">
+                Plazo:
+            </div>
+            <input type="text" id="datepicker" name="FechaElegida" placeholder="Seleccionar plazo" autocomplete="off" value="@ViewData["FiltroFecha"]" />
+
+            <button type="submit" class="btn_filter">Filtrar</button>
+        </form>
+    </div>
+
+    @foreach (var universidad in Model.ListaUniversidades)
+    {
+        <div class="oferta">
+            <div class="imagen_con_borde" style="background-image: url('data:@("image/jpeg");base64,@Convert.ToBase64String(@universidad.ImagenLogo)')">
+            </div>
+
+            <div class="contenido">
+                <div class="titulo_oferta">
+                    @universidad.Titulo
+                </div>
+                <div class="campos">
+                    <div class="bloque_categorias">
+                        <div class="categoria_campo">
+                            CATEGORIA:
+                        </div>
+                        <div class="categoria">@universidad.Categoria</div>
+                    </div>
+                    
+                    <div class="bloque_plazo">
+                        <div class="plazo_campo">
+                            PLAZO:
+                        </div>
+                        @if (@universidad.FechaIni == null)
+                        {
+                            <div class="plazo">Hasta @universidad.FechaFin</div>
+                        }
+                        else if (@universidad.FechaFin == null)
+                        {
+                            <div class="plazo">Desde @universidad.FechaIni</div>
+                        }
+                        else
+                        {
+                            <div class="plazo">Desde @universidad.FechaIni hasta @universidad.FechaFin</div>
+                        }
+                    </div>
+                    <div class="bloque_universidad">
+                        <div class="universidad_campo">
+                            UNIVERSIDAD:
+                        </div>
+                        <div class="universidad">@universidad.UniversidadEspecificada</div>
+                    </div>
+
+                </div>
+                <div class="botones">
+                    <div class="boton_notificaciones">
+                        Activar notificaciones
+                    </div>
+                    <div class="boton_detalles">
+                        Ver detalles
+                    </div>
+                </div>
+            </div>
+            @if (@universidad.Plazo == "EN PLAZO")
+            {
+                <div class="estado_abierto">
+                    EN PLAZO
+                </div>
+            }
+            else if (@universidad.Plazo == "CONVOCATORIA CERRADA")
+            {
+                <div class="estado_cerrado">
+                    CERRADO
+                </div>
+            }
+            else
+            {
+                <div class="estado_resolucion">
+                    @universidad.Plazo
+                </div>
+            }
+        </div>
+    }
+
+    
+    <td colspan="4" align="center">
+        @Html.PagedListPager((IPagedList)Model.ListaUniversidades, pagina => Url.Action("Index", "Universidad", new { pagina,Universidad=Model.Universidad,Categoria=Model.Categoria,FechaElegida=Model.FechaElegida }), PagedListRenderOptions.Classic)
+    </td>   
+            
+    
+</body>
+</html>
+
+@section scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css" />
+    <script src="https://code.jquery.com/ui/1.13.0/i18n/datepicker-es.js"></script>
+    <script>
+        $(function () {
+
+            $.datepicker.regional['es'] = {
+                closeText: 'Cerrar',
+                prevText: '<Ant',
+                nextText: 'Sig>',
+                currentText: 'Hoy',
+                monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+                dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+                dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Juv', 'Vie', 'Sáb'],
+                dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sá'],
+                weekHeader: 'Sm',
+                dateFormat: 'dd/mm/yy',
+                firstDay: 1,
+                isRTL: false,
+                showMonthAfterYear: false,
+                yearSuffix: ''
+            };
+
+            $.datepicker.setDefaults($.datepicker.regional['es']);
+            $("#datepicker").datepicker({
+                dateFormat: 'dd/mm/yy'
+            });
+        });
+    </script>
+}

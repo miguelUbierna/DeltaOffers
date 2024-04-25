@@ -1,0 +1,20 @@
+﻿
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #000000;
+}
+
+.logo {
+    width: 100px;
+    /* ajustar el tamaño según tu logo */
+}
+
+.iniciar_sesion {
+    font-weight: 500;
+    font-style: normal;
+    color: white;
+}
