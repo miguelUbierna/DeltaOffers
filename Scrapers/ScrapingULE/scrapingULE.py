@@ -220,13 +220,3 @@ class ULEScraper(ScrapingInterface):
         for fila in self.ule_general:
             for i, item in enumerate(fila):
                 fila[i] = item.replace('\xa0', ' ')
-
-
-'''
-scraper = ULEScraper()
-scraper.extraer_datos_paginas()
-scraper.tabla_limpia()
-print(scraper.ule_general)
-print(len(scraper.ule_general))
-print(len(scraper.ule_general[0]))
-'''

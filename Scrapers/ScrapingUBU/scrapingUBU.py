@@ -110,14 +110,17 @@ class UBUScraper(ScrapingInterface):
             self.filas.append('No se han encontrado destinatarios')
 
     def obtener_categorias(self, contenedor):
-        categoria = contenedor.find(
-            'div', class_='field-item odd').a.get_text(strip=True)
+        categoria = ''
+        elementos_categoria = contenedor.find_all(
+            'div', class_='field-item odd')
+        for item in elementos_categoria:
+            categoria += item.a.get_text(strip=True) + " "
 
         # Si encuentro una categoría atípica hasta lo que nos hemos encontrado hasta el momento en la web, indico que la categoría no está especificada.
         # Hasta ahora no se han encontrado mas categorías con un formato concreto
-        if categoria == 'Convocatorias personal docente' or categoria == 'Investigación: adscritas a proyectos':
+        if 'Convocatorias personal docente' in categoria or 'Convocatorias personal investigador' in categoria:
             self.filas.append('PDI')
-        elif categoria == 'Convocatorias PAS':
+        elif 'Convocatorias PAS' in categoria:
             self.filas.append('PAS')
         else:
             self.filas.append('No especificada')
