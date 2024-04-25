@@ -1,6 +1,8 @@
 import sys
 import mysql.connector
 from datetime import datetime
+from PIL import Image
+import io
 
 sys.path.append('C:\\Users\\Usuario\\Desktop\\DeltaOffers')
 
@@ -56,14 +58,23 @@ conexion = mysql.connector.connect(
 
 cursor = conexion.cursor()
 
+# Elimino todo el contenido actual de la tabla
+delete = "DELETE FROM universidades"
+cursor.execute(delete)
+
+# Cambia la ruta a la ubicación de tu imagen
+ruta_imagen = 'Images/ubuLogo.jpg'
+with open(ruta_imagen, 'rb') as f:
+    logo_ubu = f.read()
+
 for fila in scraperUBU.ubu_general:
     if fila[4] == 'No especificada' and fila[5] == 'No especificada':
 
         fecha_fin = datetime.strptime(fila[6], "%Y-%m-%d").date()
 
-        insert = "INSERT INTO universidades (titulo, plazo, enlace, descripcion,fecha_public,fecha_ini,fecha_fin,convocante,destinatarios,categoria,universidad) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        insert = "INSERT INTO universidades (titulo, plazo, enlace, descripcion,fecha_public,fecha_ini,fecha_fin,convocante,destinatarios,categoria,universidad,imagen_logo) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
         datos = (fila[0], fila[1], fila[2], fila[3], None, None,
-                 fecha_fin, fila[7], fila[8], fila[9], fila[10])
+                 fecha_fin, fila[7], fila[8], fila[9], fila[10], logo_ubu)
         cursor.execute(insert, datos)
 
     elif fila[4] != 'No especificada' and fila[5] == 'No especificada':
@@ -71,95 +82,102 @@ for fila in scraperUBU.ubu_general:
         fecha_publi = datetime.strptime(fila[4], "%Y-%m-%d").date()
         fecha_fin = datetime.strptime(fila[6], "%Y-%m-%d").date()
 
-        insert = "INSERT INTO universidades (titulo, plazo, enlace, descripcion,fecha_public,fecha_ini,fecha_fin,convocante,destinatarios,categoria,universidad) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        insert = "INSERT INTO universidades (titulo, plazo, enlace, descripcion,fecha_public,fecha_ini,fecha_fin,convocante,destinatarios,categoria,universidad,imagen_logo) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
         datos = (fila[0], fila[1], fila[2], fila[3], fecha_publi, None,
-                 fecha_fin, fila[7], fila[8], fila[9], fila[10])
+                 fecha_fin, fila[7], fila[8], fila[9], fila[10], logo_ubu)
         cursor.execute(insert, datos)
 
     elif fila[4] == 'No especificada' and fila[5] != 'No especificada':
         fecha_ini = datetime.strptime(fila[5], "%Y-%m-%d").date()
         fecha_fin = datetime.strptime(fila[6], "%Y-%m-%d").date()
 
-        insert = "INSERT INTO universidades (titulo, plazo, enlace, descripcion,fecha_public,fecha_ini,fecha_fin,convocante,destinatarios,categoria,universidad) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        insert = "INSERT INTO universidades (titulo, plazo, enlace, descripcion,fecha_public,fecha_ini,fecha_fin,convocante,destinatarios,categoria,universidad,imagen_logo) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
         datos = (fila[0], fila[1], fila[2], fila[3], None, fecha_ini,
-                 fecha_fin, fila[7], fila[8], fila[9], fila[10])
+                 fecha_fin, fila[7], fila[8], fila[9], fila[10], logo_ubu)
         cursor.execute(insert, datos)
     else:
         fecha_publi = datetime.strptime(fila[4], "%Y-%m-%d").date()
         fecha_ini = datetime.strptime(fila[5], "%Y-%m-%d").date()
         fecha_fin = datetime.strptime(fila[6], "%Y-%m-%d").date()
 
-        insert = "INSERT INTO universidades (titulo, plazo, enlace, descripcion,fecha_public,fecha_ini,fecha_fin,convocante,destinatarios,categoria,universidad) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        insert = "INSERT INTO universidades (titulo, plazo, enlace, descripcion,fecha_public,fecha_ini,fecha_fin,convocante,destinatarios,categoria,universidad,imagen_logo) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
         datos = (fila[0], fila[1], fila[2], fila[3], fecha_publi, fecha_ini,
-                 fecha_fin, fila[7], fila[8], fila[9], fila[10])
+                 fecha_fin, fila[7], fila[8], fila[9], fila[10], logo_ubu)
         cursor.execute(insert, datos)
 
 
+ruta_imagen = 'Images/uleLogo.jpg'
+with open(ruta_imagen, 'rb') as f:
+    logo_ule = f.read()
+
 for fila in scraperULE.ule_general:
 
-    insert = "INSERT INTO universidades (titulo, enlace,fecha_public,categoria,tipo,fecha_ini,fecha_fin,plazo,nombre_plaza,convocatoria_asociada,descripcion,universidad) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+    insert = "INSERT INTO universidades (titulo, enlace,fecha_public,categoria,tipo,fecha_ini,fecha_fin,plazo,nombre_plaza,convocatoria_asociada,descripcion,universidad,imagen_logo) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
     datos = (fila[0], fila[1], fila[2], fila[3], fila[4], fila[5],
-             fecha_fin, fila[7], fila[8], fila[9], fila[10], fila[11])
+             fila[6], fila[7], fila[8], fila[9], fila[10], fila[11], logo_ule)
     cursor.execute(insert, datos)
 
+ruta_imagen = 'Images/uvaLogo.jpg'
+with open(ruta_imagen, 'rb') as f:
+    logo_uva = f.read()
 
 for fila in scraperPDI.uva_general:
     if fila[1] == 'No especificado' and fila[2] == 'No especificado':
 
-        insert = "INSERT INTO universidades (titulo, fecha_ini, fecha_fin, plazo,enlace,tipo,clasificacion,universidad,categoria) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        insert = "INSERT INTO universidades (titulo, fecha_ini, fecha_fin, plazo,enlace,tipo,clasificacion,universidad,categoria,imagen_logo) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
         datos = (fila[0], None, None,
-                 fila[3], fila[4], fila[5], fila[6], fila[7], fila[8])
+                 fila[3], fila[4], fila[5], fila[6], fila[7], fila[8], logo_uva)
         cursor.execute(insert, datos)
     elif fila[1] == 'No especificado' and fila[2] != 'No especificado':
 
         fecha_fin = datetime.strptime(fila[2], "%Y-%m-%d").date()
-        insert = "INSERT INTO universidades (titulo, fecha_ini, fecha_fin, plazo,enlace,tipo,clasificacion,universidad,categoria) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        insert = "INSERT INTO universidades (titulo, fecha_ini, fecha_fin, plazo,enlace,tipo,clasificacion,universidad,categoria,imagen_logo) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
         datos = (fila[0], None, fecha_fin,
-                 fila[3], fila[4], fila[5], fila[6], fila[7], fila[8])
+                 fila[3], fila[4], fila[5], fila[6], fila[7], fila[8], logo_uva)
         cursor.execute(insert, datos)
 
     elif fila[1] != 'No especificado' and fila[2] == 'No especificado':
         fecha_ini = datetime.strptime(fila[1], "%Y-%m-%d").date()
-        insert = "INSERT INTO universidades (titulo, fecha_ini, fecha_fin, plazo,enlace,tipo,clasificacion,universidad,categoria) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        insert = "INSERT INTO universidades (titulo, fecha_ini, fecha_fin, plazo,enlace,tipo,clasificacion,universidad,categoria,imagen_logo) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
         datos = (fila[0], fecha_ini, None,
-                 fila[3], fila[4], fila[5], fila[6], fila[7], fila[8])
+                 fila[3], fila[4], fila[5], fila[6], fila[7], fila[8], logo_uva)
         cursor.execute(insert, datos)
     else:
         fecha_ini = datetime.strptime(fila[1], "%Y-%m-%d").date()
         fecha_fin = datetime.strptime(fila[2], "%Y-%m-%d").date()
-        insert = "INSERT INTO universidades (titulo, fecha_ini, fecha_fin, plazo,enlace,tipo,clasificacion,universidad,categoria) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        insert = "INSERT INTO universidades (titulo, fecha_ini, fecha_fin, plazo,enlace,tipo,clasificacion,universidad,categoria,imagen_logo) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
         datos = (fila[0], fecha_ini, fecha_fin,
-                 fila[3], fila[4], fila[5], fila[6], fila[7], fila[8])
+                 fila[3], fila[4], fila[5], fila[6], fila[7], fila[8], logo_uva)
         cursor.execute(insert, datos)
 
 
 for fila in scraperPAS.uva_general:
     if fila[1] == 'No especificado' and fila[2] == 'No especificado':
 
-        insert = "INSERT INTO universidades (titulo, fecha_ini, fecha_fin, plazo,enlace,tipo,clasificacion,universidad,categoria) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        insert = "INSERT INTO universidades (titulo, fecha_ini, fecha_fin, plazo,enlace,tipo,clasificacion,universidad,categoria,imagen_logo) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
         datos = (fila[0], None, None,
-                 fila[3], fila[4], fila[5], fila[6], fila[7], fila[8])
+                 fila[3], fila[4], fila[5], fila[6], fila[7], fila[8], logo_uva)
         cursor.execute(insert, datos)
     elif fila[1] == 'No especificado' and fila[2] != 'No especificado':
 
         fecha_fin = datetime.strptime(fila[2], "%Y-%m-%d").date()
-        insert = "INSERT INTO universidades (titulo, fecha_ini, fecha_fin, plazo,enlace,tipo,clasificacion,universidad,categoria) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        insert = "INSERT INTO universidades (titulo, fecha_ini, fecha_fin, plazo,enlace,tipo,clasificacion,universidad,categoria,imagen_logo) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
         datos = (fila[0], None, fecha_fin,
-                 fila[3], fila[4], fila[5], fila[6], fila[7], fila[8])
+                 fila[3], fila[4], fila[5], fila[6], fila[7], fila[8], logo_uva)
         cursor.execute(insert, datos)
 
     elif fila[1] != 'No especificado' and fila[2] == 'No especificado':
         fecha_ini = datetime.strptime(fila[1], "%Y-%m-%d").date()
-        insert = "INSERT INTO universidades (titulo, fecha_ini, fecha_fin, plazo,enlace,tipo,clasificacion,universidad,categoria) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        insert = "INSERT INTO universidades (titulo, fecha_ini, fecha_fin, plazo,enlace,tipo,clasificacion,universidad,categoria,imagen_logo) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
         datos = (fila[0], fecha_ini, None,
-                 fila[3], fila[4], fila[5], fila[6], fila[7], fila[8])
+                 fila[3], fila[4], fila[5], fila[6], fila[7], fila[8], logo_uva)
         cursor.execute(insert, datos)
     else:
         fecha_ini = datetime.strptime(fila[1], "%Y-%m-%d").date()
         fecha_fin = datetime.strptime(fila[2], "%Y-%m-%d").date()
-        insert = "INSERT INTO universidades (titulo, fecha_ini, fecha_fin, plazo,enlace,tipo,clasificacion,universidad,categoria) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        insert = "INSERT INTO universidades (titulo, fecha_ini, fecha_fin, plazo,enlace,tipo,clasificacion,universidad,categoria,imagen_logo) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
         datos = (fila[0], fecha_ini, fecha_fin,
-                 fila[3], fila[4], fila[5], fila[6], fila[7], fila[8])
+                 fila[3], fila[4], fila[5], fila[6], fila[7], fila[8], logo_uva)
         cursor.execute(insert, datos)
 
 
