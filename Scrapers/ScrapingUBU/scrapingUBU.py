@@ -110,11 +110,8 @@ class UBUScraper(ScrapingInterface):
             self.filas.append('No se han encontrado destinatarios')
 
     def obtener_categorias(self, contenedor):
-        categoria = ''
-        elementos_categoria = contenedor.find_all(
-            'div', class_='field-item odd')
-        for item in elementos_categoria:
-            categoria += item.a.get_text(strip=True) + " "
+        categoria = contenedor.find(
+            'div', class_='field field-name-field-term-interest field-type-taxonomy-term-reference field-label-above').get_text(strip=True)
 
         # Si encuentro una categoría atípica hasta lo que nos hemos encontrado hasta el momento en la web, indico que la categoría no está especificada.
         # Hasta ahora no se han encontrado mas categorías con un formato concreto

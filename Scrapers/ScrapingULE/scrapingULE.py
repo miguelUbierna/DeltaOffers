@@ -18,7 +18,7 @@ class ULEScraper(ScrapingInterface):
         self.contador_primeras_cerradas = 0
         self.contador_cerradas = 0
         self.palabras_no_deseadas = ['provisional', 'definitiva',
-                                     'aprobados', 'admitidos', 'desierto', 'plantilla', 'superado']
+                                     'aprobados', 'admitidos', 'desierto', 'plantilla', 'superado', 'memorias']
 
     def obtener_titulos(self, item):
         titulo = item.find(
