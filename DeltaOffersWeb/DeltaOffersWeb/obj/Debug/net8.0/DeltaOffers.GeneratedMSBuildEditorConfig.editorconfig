@@ -18,6 +18,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Usuario\Desktop\DeltaOffers\DeltaOffersWeb\DeltaOffersWeb
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Usuario/Desktop/DeltaOffers/DeltaOffersWeb/DeltaOffersWeb/Views/Detalle/UbuDetalle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWxsZVxVYnVEZXRhbGxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Usuario/Desktop/DeltaOffers/DeltaOffersWeb/DeltaOffersWeb/Views/Detalle/UleDetalle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWxsZVxVbGVEZXRhbGxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Usuario/Desktop/DeltaOffers/DeltaOffersWeb/DeltaOffersWeb/Views/Detalle/UvaDetalle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWxsZVxVdmFEZXRhbGxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Usuario/Desktop/DeltaOffers/DeltaOffersWeb/DeltaOffersWeb/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

@@ -194,6 +194,7 @@ input {
     border-radius: 5px;
     font-size: 1.0em;
     transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
     .boton_notificaciones:hover {
@@ -310,6 +311,11 @@ li {
     display: none;
 }
 
+.estilo-swal {
+    font-size: small;
+}
+
+
 @media screen and (max-width: 1263px) {
     .filtros {
         width: 90%;
@@ -345,6 +351,7 @@ li {
     .oferta {
         width: 90%;
     }
+
 }
 
 @media screen and (max-width: 1146px) {
@@ -424,6 +431,8 @@ li {
         margin-bottom: 15px;
         text-align: center;
     }
+
+
 }
 
 @media screen and (max-width: 840px) {
@@ -467,6 +476,10 @@ li {
     .oferta {
         font-size: medium;
     }
+
+    .estilo-swal {
+        font-size: x-small;
+    }
 }
 
 @media screen and (max-width: 725px) {
@@ -478,6 +491,7 @@ li {
     .botones {
         display: block;
     }
+
 
 
 }
@@ -525,4 +539,9 @@ li {
     li {
         margin: 0 2px;
     }
+
+    .estilo-swal {
+        font-size: xx-small;
+    }
+
 }

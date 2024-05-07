@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\DeltaOffers.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Usuario\\Desktop\\DeltaOffers\\DeltaOffersWeb\\DeltaOffersWeb\\wwwroot\\Images\\favicon.PNG",
+      "PackagePath": "staticwebassets\\Images\\favicon.PNG"
+    },
+    {
       "Id": "C:\\Users\\Usuario\\Desktop\\DeltaOffers\\DeltaOffersWeb\\DeltaOffersWeb\\wwwroot\\Images\\fondo.jpg",
       "PackagePath": "staticwebassets\\Images\\fondo.jpg"
     },
@@ -23,6 +27,18 @@
     {
       "Id": "C:\\Users\\Usuario\\Desktop\\DeltaOffers\\DeltaOffersWeb\\DeltaOffersWeb\\wwwroot\\css\\Portada.css",
       "PackagePath": "staticwebassets\\css\\Portada.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\DeltaOffers\\DeltaOffersWeb\\DeltaOffersWeb\\wwwroot\\css\\UbuDetalle.css",
+      "PackagePath": "staticwebassets\\css\\UbuDetalle.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\DeltaOffers\\DeltaOffersWeb\\DeltaOffersWeb\\wwwroot\\css\\UleDetalle.css",
+      "PackagePath": "staticwebassets\\css\\UleDetalle.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\DeltaOffers\\DeltaOffersWeb\\DeltaOffersWeb\\wwwroot\\css\\UvaDetalle.css",
+      "PackagePath": "staticwebassets\\css\\UvaDetalle.css"
     },
     {
       "Id": "C:\\Users\\Usuario\\Desktop\\DeltaOffers\\DeltaOffersWeb\\DeltaOffersWeb\\wwwroot\\css\\site.css",

@@ -393,3 +393,11 @@ C:\Users\Usuario\Desktop\DeltaOffers\DeltaOffersWeb\DeltaOffersWeb\obj\Debug\net
 C:\Users\Usuario\Desktop\DeltaOffers\DeltaOffersWeb\DeltaOffersWeb\obj\Debug\net8.0\DeltaOffers.pdb
 C:\Users\Usuario\Desktop\DeltaOffers\DeltaOffersWeb\DeltaOffersWeb\obj\Debug\net8.0\DeltaOffers.genruntimeconfig.cache
 C:\Users\Usuario\Desktop\DeltaOffers\DeltaOffersWeb\DeltaOffersWeb\obj\Debug\net8.0\ref\DeltaOffers.dll
+C:\Users\Usuario\Desktop\DeltaOffers\DeltaOffersWeb\DeltaOffersWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Google.dll
+C:\Users\Usuario\Desktop\DeltaOffers\DeltaOffersWeb\DeltaOffersWeb\bin\Debug\net8.0\Google.Apis.dll
+C:\Users\Usuario\Desktop\DeltaOffers\DeltaOffersWeb\DeltaOffersWeb\bin\Debug\net8.0\Google.Apis.Auth.dll
+C:\Users\Usuario\Desktop\DeltaOffers\DeltaOffersWeb\DeltaOffersWeb\bin\Debug\net8.0\Google.Apis.Calendar.v3.dll
+C:\Users\Usuario\Desktop\DeltaOffers\DeltaOffersWeb\DeltaOffersWeb\bin\Debug\net8.0\Google.Apis.Core.dll
+C:\Users\Usuario\Desktop\DeltaOffers\DeltaOffersWeb\DeltaOffersWeb\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Usuario\Desktop\DeltaOffers\DeltaOffersWeb\DeltaOffersWeb\bin\Debug\net8.0\System.Management.dll
+C:\Users\Usuario\Desktop\DeltaOffers\DeltaOffersWeb\DeltaOffersWeb\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Management.dll

@@ -1,0 +1,73 @@
+﻿@using DeltaOffers.ViewModels
+
+@model UvaViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página Detalle</title>
+    <link rel="stylesheet" href="~/css/UvaDetalle.css" asp-append-version="true">
+</head>
+<body>
+
+    <div class="oferta">
+        <div class="imagen_con_borde" style="background-image: url('data:@("image/jpeg");base64,@Convert.ToBase64String(@Model.ImagenLogo)')">
+        </div>
+        <div class="titulo_oferta">
+            @Model.Titulo
+        </div>
+
+        <div class="contenido">
+            <div class="columna1">
+                <div class="bloque_categorias">
+                    <div class="categoria_campo">
+                        CATEGORIA:
+                    </div>
+                    <div class="categoria">@Model.Categoria</div>
+
+                </div>
+                <div class="bloque_tipo">
+                    <div class="tipo_campo">
+                        TIPO:
+                    </div>
+                    <div class="tipo">@Model.Tipo</div>
+                </div>
+                <div class="enlace_campo">
+                    ENLACE:
+                </div>
+                <a class="enlace" href="@Model.Enlace">Ir a la convocatoria</a>
+            </div>
+
+            <div class="columna2">
+                <div class="bloque_plazo">
+                    <div class="plazo_campo">
+                        PLAZO:
+                    </div>
+                    @if (@Model.FechaIni == null)
+                    {
+                        <div class="plazo">Hasta @Model.FechaFin</div>
+                    }
+                    else if (Model.FechaFin == null)
+                    {
+                        <div class="plazo">Desde @Model.FechaIni</div>
+                    }
+                    else
+                    {
+                        <div class="plazo">Desde @Model.FechaIni hasta @Model.FechaFin</div>
+                    }
+                </div>
+                <div class="bloque_clasificacion">
+                    <div class="clasificacion_campo">
+                        CLASIFICACIÓN:
+                    </div>
+                    <div class="clasificacion">@Model.Clasificacion</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div></div>
+</body>
+</html>

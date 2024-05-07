@@ -6,7 +6,7 @@
     <title>@ViewData["Title"] - DeltaOffers</title>
     <link rel="stylesheet" href="~/css/Encabezado.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/Portada.css" asp-append-version="true">
-    <link rel="stylesheet" href="~/css/Maestro.css" asp-append-version="true">
+    <link rel="icon" type="image/x-icon" href="~/Images/favicon.png">
 </head>
 
 <body>
@@ -15,7 +15,14 @@
             <img src="/Images/logo.PNG" alt="Logo" class="logo">
         </div>
         <div>
-            <a href=# class="iniciar_sesion">Iniciar sesión</a> 
+            @if (User.Identity.IsAuthenticated)
+            {
+                <a class="iniciar_sesion" asp-controller="Account" asp-action="Logout">Cerrar sesión</a>
+            }
+            else
+            {
+                <a class="iniciar_sesion" asp-controller="Account" asp-action="Login">Iniciar sesión con Google</a>
+            }
         </div>
     </header>
 
@@ -24,6 +31,7 @@
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

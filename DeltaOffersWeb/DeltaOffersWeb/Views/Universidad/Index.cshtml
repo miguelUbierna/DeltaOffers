@@ -15,6 +15,7 @@
 <html>
 <head>
     <title>Listado Universidades</title>
+    <link rel="stylesheet" href="~/css/Maestro.css" asp-append-version="true">
 </head>
 <body>
     <div class="filtros">
@@ -113,7 +114,6 @@
         <div class="oferta">
             <div class="imagen_con_borde" style="background-image: url('data:@("image/jpeg");base64,@Convert.ToBase64String(@universidad.ImagenLogo)')">
             </div>
-
             <div class="contenido">
                 <div class="titulo_oferta">
                     @universidad.Titulo
@@ -152,12 +152,25 @@
 
                 </div>
                 <div class="botones">
-                    <div class="boton_notificaciones">
-                        Activar notificaciones
-                    </div>
-                    <div class="boton_detalles">
-                        Ver detalles
-                    </div>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a class="boton_notificaciones" asp-controller="Calendar" asp-action="CrearEvento" asp-route-id="@universidad.Id">Añadir a Calendar</a>
+                    }else{
+                        <a class="boton_notificaciones" onclick="mostrarAlerta()">Añadir a Calendar</a>
+                    
+                    }
+                    @if (universidad.UniversidadEspecificada == "Universidad de Burgos")
+                    {
+                        <a class="boton_detalles" asp-area="" asp-controller="Detalle" asp-action="UbuDetalle" asp-route-id="@universidad.Id">Ver Detalles</a>
+                    }
+                    else if (universidad.UniversidadEspecificada == "Universidad de Leon")
+                    {
+                        <a class="boton_detalles" asp-area="" asp-controller="Detalle" asp-action="UleDetalle" asp-route-id="@universidad.Id">Ver Detalles</a>
+                    }else if (universidad.UniversidadEspecificada == "Universidad de Valladolid")
+                    {
+                        <a class="boton_detalles" asp-area="" asp-controller="Detalle" asp-action="UvaDetalle" asp-route-id="@universidad.Id">Ver Detalles</a>
+                    }
+
                 </div>
             </div>
             @if (@universidad.Plazo == "EN PLAZO")
@@ -191,6 +204,21 @@
 </html>
 
 @section scripts {
+    <script>
+        function mostrarAlerta() {
+
+            Swal.fire({
+                icon: "error",
+                title: "Tienes que iniciar sesión para añadir una convocatoria a Google Calendar",
+                showConfirmButton: false,
+                timer: 1500,
+                customClass: {
+                    popup: 'estilo-swal',
+                },
+            });
+        }
+    </script>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css" />

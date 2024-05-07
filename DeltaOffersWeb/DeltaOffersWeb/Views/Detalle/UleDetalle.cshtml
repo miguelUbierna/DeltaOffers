@@ -1,0 +1,91 @@
+﻿@using DeltaOffers.ViewModels
+
+@model UleViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página Detalle</title>
+    <link rel="stylesheet" href="~/css/UleDetalle.css" asp-append-version="true">
+</head>
+<body>
+
+    <div class="oferta">
+        <div class="imagen_con_borde" style="background-image: url('data:@("image/jpeg");base64,@Convert.ToBase64String(@Model.ImagenLogo)')">
+        </div>
+        <div class="titulo_oferta">
+            @Model.Titulo
+        </div>
+
+        <div class="contenido">
+            <div class="columna1">
+                <div class="bloque_descripcion">
+                    <div class="descripcion_campo">
+                        DESCRIPCIÓN:
+                    </div>
+                    <div class="descripcion">@Model.Descripcion</div>
+                </div>
+                <div class="bloque_categorias">
+                    <div class="categoria_campo">
+                        CATEGORIA:
+                    </div>
+                    <div class="categoria">@Model.Categoria</div>
+
+                </div>
+                <div class="bloque_tipo">
+                    <div class="tipo_campo">
+                        TIPO:
+                    </div>
+                    <div class="tipo">@Model.Tipo</div>
+                </div>
+                <div class="enlace_campo">
+                    ENLACE:
+                </div>
+                <a class="enlace" href="@Model.Enlace">Ir a la convocatoria</a>
+            </div>
+
+            <div class="columna2">
+                <div class="bloque_publicacion">
+                    <div class="publicacion_campo">
+                        FECHA PUBLICACIÓN:
+                    </div>
+                    <div class="fecha_publicacion">@Model.FechaPublic</div>
+                </div>
+                <div class="bloque_plazo">
+                    <div class="plazo_campo">
+                        PLAZO:
+                    </div>
+                    @if (@Model.FechaIni == null)
+                    {
+                        <div class="plazo">Hasta @Model.FechaFin</div>
+                    }
+                    else if (Model.FechaFin == null)
+                    {
+                        <div class="plazo">Desde @Model.FechaIni</div>
+                    }
+                    else
+                    {
+                        <div class="plazo">Desde @Model.FechaIni hasta @Model.FechaFin</div>
+                    }
+                </div>
+
+                <div class="bloque_nombre_plaza">
+                    <div class="nombre_plaza_campo">
+                        NOMBRE PLAZA:
+                    </div>
+                    <div class="nombre_plaza">@Model.NombrePlaza</div>
+                </div>
+                <div class="bloque_convocatoria_asociada">
+                    <div class="convocatoria_asociada_campo">
+                        CONVOCATORIA ASOCIADA:
+                    </div>
+                    <div class="convocatoria_asociada">@Model.ConvocatoriaAsociada</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div></div>
+</body>
+</html>

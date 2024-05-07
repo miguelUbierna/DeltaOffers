@@ -23,7 +23,7 @@ public partial class Universidad
 
     public string? Descripcion { get; set; }
 
-    public DateTime? FechaPublic { get; set; }
+    public DateOnly? FechaPublic { get; set; }
 
     public string? Convocante { get; set; }
 

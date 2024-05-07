@@ -48,6 +48,7 @@ namespace DeltaOffers.Controllers
             foreach (var item in listadoUbu)
             {
                 MaestroViewModel respuesta = new MaestroViewModel();
+                respuesta.Id = item.Id;
                 respuesta.Titulo = item.Titulo;
                 respuesta.UniversidadEspecificada = item.UniversidadEspecificada;
                 respuesta.Categoria = item.Categoria;
