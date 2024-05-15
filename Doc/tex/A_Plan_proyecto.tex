@@ -1,0 +1,264 @@
+\apendice{Plan de Proyecto Software}
+
+\section{Introducción}
+En los años actuales, se viene dando gran prioridad a dedicar tiempo y recursos para realizar una  planificación del proyecto de calidad. Esto se debe a que en todo proyecto es muy importante asentar unas bases planificativas y de estructura antes de ponernos a trabajar en los aspectos más técnicos.
+
+Este plan de proyecto nos indicará los pasos a seguir para que el resultado se un proyecto sea satisfactorio y por lo tanto se consiga alcanzar el éxito.
+
+Esta fase de planificación va estar fragmentada en dos partes:
+\begin{itemize}
+\item 
+\textbf{Planificación temporal: } Donde se detallarán los plazos que se han seguido en el proyecto y las distintas tareas y actividades realizadas en estos mismos.
+\item 
+\textbf{Estudio de viabilidad: } Donde se realizará un estudio económico con su respectivo análisis de costes y beneficios y, por otro lado, un estudio legal en el que se analizará todas las leyes que pueden llegar a estar involucradas en el proyecto.
+\end{itemize}
+
+Ambas partes deben de tenerse en cuenta a la hora de realizar un proyecto y si se realizan correctamente, estarémos en una situación ventajosa para llevar a cabo el proyecto con el menor número de contratiempos y problemas posibles. 
+\section{Planificación temporal}
+La gestión de este proyecto, se ha llevado a cabo siguiendo una metodología Scrum. Es por ello por lo que se han ido realizando desarrollos iterativos e incrementales los cuales se han ido subiendo a la plataforma de desarrollo GitHub cada 2 semanas. Durante estos \textit{sprints} de dos semanas de duración, se acordaba una reunión retrospectiva con los tutores en la cual se hacían revisiones de las tareas realizadas durante el \textit{sprint} y se planteaban nuevas tareas para \textit{sprints} futuros.
+
+Todas estas tareas abordadas, han sido recogidas dentro del apartado \textit{Issues} en GitHub las cuales se detallaban en el momento que se realizaba una subida a la plataforma con el nuevo incremento, de esta manera, habia una cohesión entre el nuevo desarrollo del producto y las tareas llevadas a cabo para conseguir ese nuevo producto funcional.
+
+Por otro lado, cabe destacar que la metodología ágil Scrum no se ha podido realizar en su totalidad dado que es una metodología diseñada para grupos de trabajo y este proyecto ha sido un proyecto individual.
+
+Finalmente, se van a detallar cuales han sido los \textit{sprints} realizados con algunas descripciones de las tareas y actividades realizadas. Además, se mostrarán una serie de gráficas con el porcentaje de tiempo dedicado en el sprint a las distintas actividades realizadas.
+
+\subsection{Sprint 1 (08/02/2024 -
+21/02/2024)}
+
+Este \textit{sprint} comenzó con una reunión inicial con mis tutores César Ignacio García Osorio y Ana Serrano Mamolar tras haber acordado su mentorización para este proyecto previamente. En esta reunión se determinaron los objetivos del proyecto realizando una estructuración del mismo.
+
+Por otro lado, también se trató el tema de las herramientas que iban a ser utilizadas para la realización del proyecto, buscando unas herramientas las cuales se adaptasen a las tareas que se iban a realizar y al objetivo final que se quería conseguir. 
+
+Finalmente, se me dieron algunos consejos en función de las dudas que tenía sobre como estructurar y organizar el proyecto en cuanto a tiempos y a las actividades a realizar.
+
+
+El trabajo realizado estas dos semanas consistió en:
+\begin{itemize}
+\item 
+\textbf{Investigación de las webs de las que voy a hacer el \textit{web scraping}: } Para determinar todos los atributos que serían interesantes de recopilar para mostrarlos en la web de mi proyecto.
+\item 
+\textbf{Determinar las librerias de Python que van a ser utilizadas para llevar a cabo el proceso de \textit{web scraping} }
+
+\end{itemize}
+
+\imagensprint{sprint1}{Sprint 1.}
+
+\subsection{Sprint 2 (22/02/2024 -
+06/03/2024)}
+Durante esta segunda iteración se realizó el proceso de \textit{web scraping} para las universidades públicas de Castilla y León. Esta fue una primera toma de contacto con el scraping en la que se obtuvieron los atributos de cada una de las convocatorias y para cada una de las universidades.
+
+Para este proceso se utilizaron herramientas como Requests, Selenium y BeautifulSoup. Durante este \textit{sprint} se fue aprendiendo la utilización de estas herramientas mediante la lectura de documentación y su aplicación práctica.
+
+Además, dado que la calidad de algunos datos cuando se realizó el scraping no eran buenos. Se decidió realizar una limpieza de algunos ya pensando en la calidad de mi web en el futuro.
+
+Por último, se realizó una subida al repositorio del proyecto en GitHub con los desarrollos realizados durante este \textit{sprint}.
+
+\imagensprint{sprint2}{Sprint 2.}
+
+\subsection{Sprint 3 (07/03/2024 -
+20/03/2024)}
+Por un lado, este periodo consistió en añadir funcionalidad nueva al proceso de \textit{web scraping} mediante la explotación de nuevos atributos los cuales no habían sido contemplados anteriormente.
+
+Sin embargo, también se busco mucho mejorar la calidad del código realizado hasta esa fecha. Para ello se decidió pasar el desarrollo realizado a programación orientada a objetos teniendo así una estructura mucho más definida y favoreciendo de esta manera la eliminación de duplicidad de código. De esta manera, se estructuró el proyecto con una clase por cada una de las universidades de las que se extrajeron los datos.
+
+Por último, se aplico la guía de estilos de PEP8 para mejorar la legibilidad y calidad del código. Esto se hizo con una herramienta disponible para Python llamada Autopep8 la cual nos aplicaba la guía de estilos al guardar los cambios en el desarrollo realizado.
+
+\imagensprint{sprint3}{Sprint 3.}
+
+\subsection{Sprint 4 (21/03/2024 -
+03/04/2024)}
+En esta iteración, se realizó una limpieza de los datos recopilados en cuanto a su formato y se comenzó a utilizar herencia mediante la creación de una clase abstracta con los métodos comunes de las clases concretas. Este aspecto mejora enormemente la extensibilidad y facilidad de mantenimiento del código para situaciones futuras.
+
+Gran parte del tiempo del sprint, se dedicó a la implantación de Testing. Esto se debe a que los test unitarios en los proyectos de desarrollo de software tienen un valor crucial en la detección de errores y mejora de mantenimiento. Además, aseguran que el software tenga una cierta calidad. Para este proceso se utilizaron herramientas como MagicMock y UnitTest.
+
+Por otro lado, se creo un entorno virtual en Python con \textit{virtualenv} para la gestión de dependencias y de esta manera aislar el entorno en el que se está desarrollando el proyecto.
+
+Finalmente, se creo un directorio en el proyecto con un fichero en el que se realizaban las llamadas a las correspondientes clases en las que se desarrolló el \textit{web scraping} de cada una de las universidades para recopilar la información. Todos estos datos fueron recopilados y se realizó una conexión con la base de datos para que fuesen almacenados ahi de forma segura.
+
+\imagensprint{sprint4}{Sprint 4.}
+
+\subsection{Sprint 5 (04/04/2024 -
+17/04/2024)}
+Los primeros días de este periodo, consistieron en corregir algunos errores que se percibieron en al ejecutar los test de aspectos que no se estaban realizando del todo bien en el proceso de \textit{web scraping}. Una vez ya realizada esta tarea, se realizaron las inserciones de los datos recopilados con un formato adecuado a una base de datos MySQL. Esta base de datos puede ser considerado un almacen de datos o \textit{Data Warehouse} en el que aparecian los atributos comunes y no comunes entre las distintas webs de las distintas universidades junto con una recopilación de todas las convocatorias.
+
+Una vez realizado esto. Se comenzó con el desarrollo de la web que iba a recoger todas estas convocatorias del PDI y PAS. Para realizar esta web se decició optar por un \textit{framework} como Asp .NET Core MVC el cual es utilizado para realizar aplicaciones web siguiendo el patrón Modelo-Vista-Controlador.
+
+Por otro lado, también se realizarón algunas tareas de \textit{mockup} pensando en diseños atractivos para la aplicación web a realizar. En el momento que se encontraron una serie de prototipos acordes con la idea principal, se comenzó a trabajar con html y css para la realización de las interfaces.
+
+Finalmente, se utilizaron \textit{media queries} para que la web tuviera un diseño \textit{responsive}  y, de esta manera, que se pudiese utilizar en cualquier tipo de pantalla sin importar las dimensiones de la misma.
+
+\imagensprint{sprint5}{Sprint 5.}
+
+\subsection{Sprint 6 (18/04/2024 -
+01/05/2024)}
+
+Durante este \textit{sprint}, se realizarón con diseño adaptativo las ventanas en las que aparecen los detalles de cada una de las convocatorias.
+
+Posteriormente, para añadir funcionalidad extra a mi aplicación web, se decidió integrar el inicio de sesión con Google mediante autenticación basada en OAuth 2.0. Esto se realizó para que se pudiese permitir la integración con Google Calendar desde la web y de esta manera aportar un valor extra a la aplicación.
+
+La integración con Google Calendar también se realizó en este sprint. De esta manera, los usuarios que iniciasen sesión con la aplicación, podrán añadir a su calendario la fecha en la que caduca esa convocatoria y así poder acordarse de realizar solicitudes en el caso de que estén interesados.
+
+Con la finalización de este \textit{sprint} se consideraba que la funcionalidad de la aplicación se habia acabado de desarrollar en su totalidad.
+
+\imagensprint{sprint6}{Sprint 6.}
+
+\subsection{Sprint 7 (02/05/2024 -
+15/05/2024)}
+Esta iteración, fue una de las finales del proyecto y como consecuencia, se dedicó gran parte del tiempo para realizar la documentación. Para ello, se recopilarón todas las anotaciones, datos y tareas de los anteriores \textit{sprints}. 
+
+Por otro lado, se ha comenzado a dedicar gran parte del tiempo a la investigación sobre las distinas posibilidades que hay para lanzar la aplicación de manera gratuita para que pueda ser probada por cualquier usuario.
+\imagensprint{sprint7}{Sprint 7.}
+
+\subsection{Resumen}
+
+Una vez finalizados todos los \textit{sprints} se han podido obtener una serie de conclusiones sobre como ha sido la planificación del proyecto y el tiempo que se ha invertido en cada una de las distintas actividades y tareas, estas conclusiones se van a comentar a continuación:
+
+\begin{itemize}
+\item En las primeras iteraciones, como es lógico, se invirtió gran parte del tiempo a la planificación y estructuración del proyecto.
+
+\item En casi todos \textit{sprints} se ha dedicado un porcentaje de tiempo a la programación y a la realización de nuevos desarrollos.
+
+\item El soporte y las mejoras de la aplicación, fue algo frecuente en gran parte de las iteraciones gracias a la implementación de testing y realización de test manuales mediante el uso de la aplicación se pudieron corregir los errores.
+
+\item Una vez que acabaron los desarrollos en cuanto a la extracción de datos, se dedico más tiempo al prototipado y al desarrollo de las interfaces de la aplicación.
+
+\item Los últimos tramos del proyecto fueron dedicados a la documentación de la aplicación y a su lanzamiento.
+
+\end{itemize}
+
+\section{Estudio de viabilidad}
+
+\subsection{Viabilidad económica}
+
+\subsubsection{Introducción}
+En este apartado se va a realizar un análisis de los costes y los beneficios que tendría este proyecto. Estos factures serán muy importantes en el caso de que este proyecto se ejecutase en un entorno real. De esta manera podríamos examinar su viabilidad financiera e incluso apreciar cual sería el impacto que tienen los costes y beneficios a la hora de tomar decisiones.
+
+Por otro lado, dado que el proyecto no se ha llevado a cabo  en un entorno real, podría haber otros factores que afecten a la viabilidad económica del mismo y que no hayan sido detallados en este apartado.
+
+\subsubsection{Análisis de los Costes}
+
+En este apartado, podemos identifitar tres categorias de costes que casi todo proyecto software se encuentra en el camino:  los costes humanos, los costes de hardware y los costes de software.
+
+\textbf{Costes humanos:}
+
+Este proyecto ha sido realizado por una sola persona. Considerando que ese empleado es un Ingeniero Informático cuyo pais de residencia es España, según el portal \textit{Talent.com} al que puedes acceder desde el siguiente \href{https://es.talent.com/salary?job=ingeniero+inform%C3%A1tico}{enlace}, el salario promedio por hora es de 13,86 € la hora. Contando que se han dedicado 300 horas, podemos deducir lo siguiente:
+
+\[ 13,86 \, \text{€} \times 300 \, \text{horas} = 4158 \, \text{€ brutos totales} \]
+
+Esta cantidad la tenemos que dividir entre los 4 meses en los que se ha realizado en proyecto y por lo tanto:
+
+\[ 4158 \, \text{€} / 4 \, \text{meses} = 1039,5 \, \text{€ brutos mensuales} \]
+
+Una vez analizado lo que va a recibir el trabajador, vamos a analizar cual sería, como consecuencia, los costes totales de personal que tendrá la empresa:
+
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \setlength{\tabcolsep}{20pt}
+    \begin{tabular}{l l}
+        \hline
+        \textbf{Concepto} & \textbf{Coste} \\ \hline
+        Salario mensual bruto & 1039,5€ \\
+        Contingencias comunes (23,6\%) & 245,32€\\
+        Tipo general de  desempleo (5,5\%) & 57,17€\\
+        Contingencias profesionales (3,5\%) & 36,38€\\
+        Fondo de garantia social (0,2\%)& 2,08€\\
+        Formación profesional (0,6\%) & 6,24€\\
+        Salario mensual total & 1386,69€\\  \hline
+        \textbf{Total costes humanos} & \textbf{5546,76€}\\ \hline
+    \end{tabular}
+    \caption{Costes humanos totales}
+    \label{tab:costes_humanos}
+\end{table}
+
+\newpage
+
+\textbf{Costes hardware:}
+
+Para el desarrollo del proyecto, tan solo es necesario poseer de un ordenador portatil. En este caso, suponemos el caso en el que el ordenador ha sido comprado nuevo por la empresa para la realización de este nuevo proyecto. Contando con que el proceso de \textit{web scraping} es costoso en cuanto a rendimiento, se necesitará un ordenador con unas características medianamente potentes, por lo tanto el coste hardware será el siguiente:
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \setlength{\tabcolsep}{20pt}
+    \begin{tabular}{l l}
+        \hline
+        \textbf{Concepto} & \textbf{Coste} \\ \hline
+        Ordenador Portátil & 879,99€ \\  \hline
+        \textbf{Total costes hardware} & \textbf{879,99€}\\ \hline
+    \end{tabular}
+    \caption{Costes hardware}
+    \label{tab:costes_hardware}
+\end{table}
+
+\textbf{Costes software:}
+
+En cuanto a los costes software, tan solo podríamos recalcar el sistema operativo utilizado pero en este caso, la licencia venía con el ordenador portátil de fabrica. Este sistema operativo era el Windows 10 Pro.
+
+Por otro lado, me gustaría destacar que todas las herramientas software utilizadas son gratuitas. Esto es un factor muy a tener en cuenta a la hora de realizar un estudio económico del proyecto dado que reduce enormemente los costes en comparación con otros proyectos.
+
+\textbf{Otros costes:}
+Aunque este tipo de costes no estén encasillados en una categoria como las definidas previamente. Un proyecto de este estilo suele necesitar de otros productos o servicios que también son imprescindibles para que el proyecto tenga éxito.  
+
+Los productos y servicios mencionados previamente, se consideran los siguientes:
+
+\begin{itemize}
+\item \textbf{Infraestructura de alojamiento y dominio: } Dado que para este tipo de proyectos es necesario disponer de instancias de computación en la nube y un dominio personalizado.
+\item \textbf{Conexión a internet: } Debido a que a pesar de que el software sea gratuito, se necesita en ocasiones conexión con la red para poder ejecutarlo.
+\item \textbf{Documentación impresa y material para la presentación: } Dado que es necesario por si se quieren tener reuniones con posibles compradores del producto o para presantarlo dentro de la empresa en la que se ha realizado el proyecto. En este caso esto se ha realizado para poder presentarlo ante el tribunal.
+
+\end{itemize}
+
+
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \setlength{\tabcolsep}{20pt}
+    \begin{tabular}{l l}
+        \hline
+        \textbf{Concepto} & \textbf{Coste} \\ \hline
+        Infraestructura y Dominio & 65,55€ \\
+        Internet  & 87,60€\\
+        Documentación y material para la presentación & 50€\\  \hline
+        \textbf{Total otros costes} & \textbf{203,15€}\\ \hline
+    \end{tabular}
+    \caption{Otros Costes}
+    \label{tab:otros_costes}
+\end{table}
+
+
+\textbf{Costes totales:}
+
+Una vez analizados todos los costes anteriores, podemos calcular cuales han sido los costes totales:
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \setlength{\tabcolsep}{20pt}
+    \begin{tabular}{l l}
+        \hline
+        \textbf{Concepto} & \textbf{Coste} \\ \hline
+        Costes Humanos & 5546,76€ \\
+        Costes Software & 0€ \\
+        Costes Hardware  & 879,99€\\
+        Otros costes & 203,15€\\  \hline
+        \textbf{Costes Totales} & \textbf{6629,9€}\\ \hline
+    \end{tabular}
+    \caption{Costes Totales}
+    \label{tab:costes_totales}
+\end{table}
+
+\textbf{Beneficios:}
+
+El objetivo de esta apliación, ha sido aportar un servicio a las universidades de Castilla y León mediante una aplicación en la que se pudiesen ver recopiladas todas las convocatorias que estas universidades publican en sus webs. 
+
+Por esta razón, en caso de que la aplicación pasase a desarrollo, esta misma se distribuirá de manera gratuita para un beneficio de la comunidad universitaria.
+
+Por otro lado, si se quisiese obtener un beneficio económico de la misma, se podría plantear la implantación de anuncios y publicidad. Otra opción válida como modelo de negocio, sería el cobro de un importe para aquellos usuarios que hayan accedido a una convocatoria gracias a esta web y hayan sido elegidos para el puesto solicitado.
+
+\subsection{Viabilidad legal}
+
+

@@ -2,7 +2,7 @@ import sys
 import mysql.connector
 from datetime import datetime
 from PIL import Image
-import io
+
 
 sys.path.append('C:\\Users\\Usuario\\Desktop\\DeltaOffers\\DataCollections')
 

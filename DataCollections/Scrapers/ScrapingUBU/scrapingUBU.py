@@ -2,8 +2,9 @@ import requests
 from bs4 import BeautifulSoup
 import time
 from datetime import datetime
-import sys
 
+
+import sys
 sys.path.append('C:\\Users\\Usuario\\Desktop\\DeltaOffers\\DataCollections')
 
 

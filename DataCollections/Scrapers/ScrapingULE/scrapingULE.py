@@ -2,8 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 import time
-import sys
 
+import sys
 sys.path.append('C:\\Users\\Usuario\\Desktop\\DeltaOffers\\DataCollections')
 
 # La guía de estilos Pep8 indica que los 'imports' tienen que estar al inicio del fichero, sin embargo, hay ocasiones en las que nos interesa 'saltarnos' esa guía de estilos.
