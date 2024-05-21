@@ -177,12 +177,12 @@ class UBUScraper(ScrapingInterface):
                         else:
                             self.contador_cerradas += 1
                 else:
-                    print(f'La solicitud ha fallado y su código de estado es el {
-                        respuesta_subpagina.status_code}')
+                    print(
+                        f'La solicitud ha fallado y su código de estado es el {respuesta_subpagina.status_code}')
 
         else:
-            print(f'La solicitud ha fallado y su código de estado es el {
-                response.status_code}')
+            print(
+                f'La solicitud ha fallado y su código de estado es el {response.status_code}')
 
     def tabla_limpia(self):
         # Función la cual es utilizada para realizar una limpieza de mi estructura de datos ante caracteres no deseados a la hora de realizar el scraping.

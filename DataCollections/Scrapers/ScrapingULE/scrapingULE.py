@@ -195,11 +195,11 @@ class ULEScraper(ScrapingInterface):
                     else:
                         self.fila.clear()
                 else:
-                    print(f'La solicitud ha fallado y su código de estado es el {
-                        respuesta_subpagina.status_code}')
+                    print(
+                        f'La solicitud ha fallado y su código de estado es el {respuesta_subpagina.status_code}')
         else:
-            print(f'La solicitud ha fallado y su código de estado es el {
-                response.status_code}')
+            print(
+                f'La solicitud ha fallado y su código de estado es el {response.status_code}')
 
     def extraer_datos_paginas(self):
         contador_paginas = 0

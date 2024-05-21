@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v8.0": {
       "DeltaOffers/1.0.0": {
         "dependencies": {
-          "Google.Apis.Calendar.v3": "1.68.0.3396",
+          "MailKit": "4.6.0",
           "Microsoft.AspNetCore.Authentication.Google": "8.0.4",
           "Microsoft.EntityFrameworkCore": "8.0.3",
           "Microsoft.EntityFrameworkCore.Tools": "8.0.3",
@@ -20,58 +20,11 @@
           "DeltaOffers.dll": {}
         }
       },
-      "BouncyCastle.Cryptography/2.2.1": {
+      "BouncyCastle.Cryptography/2.3.1": {
         "runtime": {
           "lib/net6.0/BouncyCastle.Cryptography.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.2.1.47552"
-          }
-        }
-      },
-      "Google.Apis/1.68.0": {
-        "dependencies": {
-          "Google.Apis.Core": "1.68.0"
-        },
-        "runtime": {
-          "lib/net6.0/Google.Apis.dll": {
-            "assemblyVersion": "1.68.0.0",
-            "fileVersion": "1.68.0.0"
-          }
-        }
-      },
-      "Google.Apis.Auth/1.68.0": {
-        "dependencies": {
-          "Google.Apis": "1.68.0",
-          "Google.Apis.Core": "1.68.0",
-          "System.Management": "7.0.2"
-        },
-        "runtime": {
-          "lib/net6.0/Google.Apis.Auth.dll": {
-            "assemblyVersion": "1.68.0.0",
-            "fileVersion": "1.68.0.0"
-          }
-        }
-      },
-      "Google.Apis.Calendar.v3/1.68.0.3396": {
-        "dependencies": {
-          "Google.Apis": "1.68.0",
-          "Google.Apis.Auth": "1.68.0"
-        },
-        "runtime": {
-          "lib/net6.0/Google.Apis.Calendar.v3.dll": {
-            "assemblyVersion": "1.68.0.3396",
-            "fileVersion": "1.68.0.3396"
-          }
-        }
-      },
-      "Google.Apis.Core/1.68.0": {
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.3"
-        },
-        "runtime": {
-          "lib/net6.0/Google.Apis.Core.dll": {
-            "assemblyVersion": "1.68.0.0",
-            "fileVersion": "1.68.0.0"
+            "fileVersion": "2.3.1.17862"
           }
         }
       },
@@ -117,6 +70,17 @@
           "lib/net6.0/K4os.Hash.xxHash.dll": {
             "assemblyVersion": "1.0.8.0",
             "fileVersion": "1.0.8.0"
+          }
+        }
+      },
+      "MailKit/4.6.0": {
+        "dependencies": {
+          "MimeKit": "4.6.0"
+        },
+        "runtime": {
+          "lib/net8.0/MailKit.dll": {
+            "assemblyVersion": "4.6.0.0",
+            "fileVersion": "4.6.0.0"
           }
         }
       },
@@ -489,9 +453,21 @@
           }
         }
       },
+      "MimeKit/4.6.0": {
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.3.1",
+          "System.Security.Cryptography.Pkcs": "8.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/MimeKit.dll": {
+            "assemblyVersion": "4.6.0.0",
+            "fileVersion": "4.6.0.0"
+          }
+        }
+      },
       "Mono.TextTemplating/2.2.1": {
         "dependencies": {
-          "System.CodeDom": "7.0.0"
+          "System.CodeDom": "4.4.0"
         },
         "runtime": {
           "lib/netstandard2.0/Mono.TextTemplating.dll": {
@@ -502,7 +478,7 @@
       },
       "MySql.Data/8.3.0": {
         "dependencies": {
-          "BouncyCastle.Cryptography": "2.2.1",
+          "BouncyCastle.Cryptography": "2.3.1",
           "Google.Protobuf": "3.25.1",
           "K4os.Compression.LZ4.Streams": "1.3.5",
           "System.Buffers": "4.5.1",
@@ -574,14 +550,6 @@
           }
         }
       },
-      "Newtonsoft.Json/13.0.3": {
-        "runtime": {
-          "lib/net6.0/Newtonsoft.Json.dll": {
-            "assemblyVersion": "13.0.0.0",
-            "fileVersion": "13.0.3.27908"
-          }
-        }
-      },
       "Pomelo.EntityFrameworkCore.MySql/8.0.2": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Relational": "8.0.3",
@@ -595,11 +563,11 @@
         }
       },
       "System.Buffers/4.5.1": {},
-      "System.CodeDom/7.0.0": {
+      "System.CodeDom/4.4.0": {
         "runtime": {
-          "lib/net7.0/System.CodeDom.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
+          "lib/netstandard2.0/System.CodeDom.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.6.25519.3"
           }
         }
       },
@@ -706,6 +674,7 @@
           }
         }
       },
+      "System.Formats.Asn1/8.0.0": {},
       "System.IO/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -716,25 +685,6 @@
         }
       },
       "System.IO.Pipelines/6.0.3": {},
-      "System.Management/7.0.2": {
-        "dependencies": {
-          "System.CodeDom": "7.0.0"
-        },
-        "runtime": {
-          "lib/net7.0/System.Management.dll": {
-            "assemblyVersion": "7.0.0.2",
-            "fileVersion": "7.0.723.27404"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/net7.0/System.Management.dll": {
-            "rid": "win",
-            "assetType": "runtime",
-            "assemblyVersion": "7.0.0.2",
-            "fileVersion": "7.0.723.27404"
-          }
-        }
-      },
       "System.Reflection/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -774,6 +724,11 @@
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
           "System.Security.Principal.Windows": "4.7.0"
+        }
+      },
+      "System.Security.Cryptography.Pkcs/8.0.0": {
+        "dependencies": {
+          "System.Formats.Asn1": "8.0.0"
         }
       },
       "System.Security.Cryptography.ProtectedData/4.4.0": {
@@ -886,40 +841,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "BouncyCastle.Cryptography/2.2.1": {
+    "BouncyCastle.Cryptography/2.3.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-A6Zr52zVqJKt18ZBsTnX0qhG0kwIQftVAjLmszmkiR/trSp8H+xj1gUOzk7XHwaKgyREMSV1v9XaKrBUeIOdvQ==",
-      "path": "bouncycastle.cryptography/2.2.1",
-      "hashPath": "bouncycastle.cryptography.2.2.1.nupkg.sha512"
-    },
-    "Google.Apis/1.68.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-s2MymhdpH+ybZNBeZ2J5uFgFHApBp+QXf9FjZSdM1lk/vx5VqIknJwnaWiuAzXxPrLEkesX0Q+UsiWn39yZ9zw==",
-      "path": "google.apis/1.68.0",
-      "hashPath": "google.apis.1.68.0.nupkg.sha512"
-    },
-    "Google.Apis.Auth/1.68.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-hFx8Qz5bZ4w0hpnn4tSmZaaFpjAMsgVElZ+ZgVLUZ2r9i+AKcoVgwiNfv1pruNS5cCvpXqhKECbruBCfRezPHA==",
-      "path": "google.apis.auth/1.68.0",
-      "hashPath": "google.apis.auth.1.68.0.nupkg.sha512"
-    },
-    "Google.Apis.Calendar.v3/1.68.0.3396": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-rD5BXpTLv1RcTIE3CYBWhF4mMB6hX101XZywCMJxamFAZyoYbHX5w/QPrKCAkWXgvHJmA3NFpjGKq9eZk9kJbg==",
-      "path": "google.apis.calendar.v3/1.68.0.3396",
-      "hashPath": "google.apis.calendar.v3.1.68.0.3396.nupkg.sha512"
-    },
-    "Google.Apis.Core/1.68.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-pAqwa6pfu53UXCR2b7A/PAPXeuVg6L1OFw38WckN27NU2+mf+KTjoEg2YGv/f0UyKxzz7DxF1urOTKg/6dTP9g==",
-      "path": "google.apis.core/1.68.0",
-      "hashPath": "google.apis.core.1.68.0.nupkg.sha512"
+      "sha512": "sha512-buwoISwecYke3CmgG1AQSg+sNZjJeIb93vTAtJiHZX35hP/teYMxsfg0NDXGUKjGx6BKBTNKc77O2M3vKvlXZQ==",
+      "path": "bouncycastle.cryptography/2.3.1",
+      "hashPath": "bouncycastle.cryptography.2.3.1.nupkg.sha512"
     },
     "Google.Protobuf/3.25.1": {
       "type": "package",
@@ -955,6 +882,13 @@
       "sha512": "sha512-Wp2F7BamQ2Q/7Hk834nV9vRQapgcr8kgv9Jvfm8J3D0IhDqZMMl+a2yxUq5ltJitvXvQfB8W6K4F4fCbw/P6YQ==",
       "path": "k4os.hash.xxhash/1.0.8",
       "hashPath": "k4os.hash.xxhash.1.0.8.nupkg.sha512"
+    },
+    "MailKit/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EJ1L2AtoO9nGZz2AKl2WGGw4pLIpkgEwzpczmZWBLqX0m33ueVA+CJYd9hg52XOvvEj+w5PVzB7yy26E0WHzKQ==",
+      "path": "mailkit/4.6.0",
+      "hashPath": "mailkit.4.6.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.Google/8.0.4": {
       "type": "package",
@@ -1138,6 +1072,13 @@
       "path": "microsoft.win32.systemevents/4.7.0",
       "hashPath": "microsoft.win32.systemevents.4.7.0.nupkg.sha512"
     },
+    "MimeKit/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-M4jddPQNSClTzHE+HnfrtN93mCXSYF8KewWUTwzXgl49ajzUh8hz/UY4CAnRQR4YJF3lBY5P+r+73VXZAGKafw==",
+      "path": "mimekit/4.6.0",
+      "hashPath": "mimekit.4.6.0.nupkg.sha512"
+    },
     "Mono.TextTemplating/2.2.1": {
       "type": "package",
       "serviceable": true,
@@ -1166,13 +1107,6 @@
       "path": "mysqlconnector/2.3.5",
       "hashPath": "mysqlconnector.2.3.5.nupkg.sha512"
     },
-    "Newtonsoft.Json/13.0.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
-      "path": "newtonsoft.json/13.0.3",
-      "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
-    },
     "Pomelo.EntityFrameworkCore.MySql/8.0.2": {
       "type": "package",
       "serviceable": true,
@@ -1187,12 +1121,12 @@
       "path": "system.buffers/4.5.1",
       "hashPath": "system.buffers.4.5.1.nupkg.sha512"
     },
-    "System.CodeDom/7.0.0": {
+    "System.CodeDom/4.4.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-GLltyqEsE5/3IE+zYRP5sNa1l44qKl9v+bfdMcwg+M9qnQf47wK3H0SUR/T+3N4JEQXF3vV4CSuuo0rsg+nq2A==",
-      "path": "system.codedom/7.0.0",
-      "hashPath": "system.codedom.7.0.0.nupkg.sha512"
+      "sha512": "sha512-2sCCb7doXEwtYAbqzbF/8UAeDRMNmPaQbU2q50Psg1J9KzumyVVCgKQY8s53WIPTufNT0DpSe9QRvVjOzfDWBA==",
+      "path": "system.codedom/4.4.0",
+      "hashPath": "system.codedom.4.4.0.nupkg.sha512"
     },
     "System.Collections.Immutable/6.0.0": {
       "type": "package",
@@ -1264,6 +1198,13 @@
       "path": "system.drawing.common/4.7.0",
       "hashPath": "system.drawing.common.4.7.0.nupkg.sha512"
     },
+    "System.Formats.Asn1/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AJukBuLoe3QeAF+mfaRKQb2dgyrvt340iMBHYv+VdBzCUM06IxGlvl0o/uPOS7lHnXPN6u8fFRHSHudx5aTi8w==",
+      "path": "system.formats.asn1/8.0.0",
+      "hashPath": "system.formats.asn1.8.0.0.nupkg.sha512"
+    },
     "System.IO/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -1277,13 +1218,6 @@
       "sha512": "sha512-ryTgF+iFkpGZY1vRQhfCzX0xTdlV3pyaTTqRu2ETbEv+HlV7O6y7hyQURnghNIXvctl5DuZ//Dpks6HdL/Txgw==",
       "path": "system.io.pipelines/6.0.3",
       "hashPath": "system.io.pipelines.6.0.3.nupkg.sha512"
-    },
-    "System.Management/7.0.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-/qEUN91mP/MUQmJnM5y5BdT7ZoPuVrtxnFlbJ8a3kBJGhe2wCzBfnPFtK2wTtEEcf3DMGR9J00GZZfg6HRI6yA==",
-      "path": "system.management/7.0.2",
-      "hashPath": "system.management.7.0.2.nupkg.sha512"
     },
     "System.Reflection/4.3.0": {
       "type": "package",
@@ -1333,6 +1267,13 @@
       "sha512": "sha512-JECvTt5aFF3WT3gHpfofL2MNNP6v84sxtXxpqhLBCcDRzqsPBmHhQ6shv4DwwN2tRlzsUxtb3G9M3763rbXKDg==",
       "path": "system.security.accesscontrol/4.7.0",
       "hashPath": "system.security.accesscontrol.4.7.0.nupkg.sha512"
+    },
+    "System.Security.Cryptography.Pkcs/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ULmp3xoOwNYjOYp4JZ2NK/6NdTgiN1GQXzVVN1njQ7LOZ0d0B9vyMnhyqbIi9Qw4JXj1JgCsitkTShboHRx7Eg==",
+      "path": "system.security.cryptography.pkcs/8.0.0",
+      "hashPath": "system.security.cryptography.pkcs.8.0.0.nupkg.sha512"
     },
     "System.Security.Cryptography.ProtectedData/4.4.0": {
       "type": "package",

@@ -114,7 +114,7 @@ class TestScrapingULE(unittest.TestCase):
         fecha_inicial = datetime.strptime(
             "2024-03-25T23:00:00Z", "%Y-%m-%dT%H:%M:%SZ")
         fecha_fin = datetime.strptime(
-            "2024-04-15T21:59:59Z", "%Y-%m-%dT%H:%M:%SZ")
+            "2025-04-15T21:59:59Z", "%Y-%m-%dT%H:%M:%SZ")
         fecha_fin_cerrada = datetime.strptime(
             "2024-03-27T21:59:59Z", "%Y-%m-%dT%H:%M:%SZ")
         scraper.obtener_estados(fecha_inicial, fecha_fin)

@@ -44,9 +44,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Google.Apis.Calendar.v3": {
+            "MailKit": {
               "target": "Package",
-              "version": "[1.68.0.3396, )"
+              "version": "[4.6.0, )"
             },
             "Microsoft.AspNetCore.Authentication.Google": {
               "target": "Package",
