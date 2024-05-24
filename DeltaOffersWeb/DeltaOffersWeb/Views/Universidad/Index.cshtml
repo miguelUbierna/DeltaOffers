@@ -131,15 +131,15 @@
                         </div>
                         @if (@universidad.FechaIni == null)
                         {
-                            <div class="plazo">Hasta @universidad.FechaFin</div>
+                            <div class="plazo">Hasta @universidad.FechaFinString</div>
                         }
                         else if (@universidad.FechaFin == null)
                         {
-                            <div class="plazo">Desde @universidad.FechaIni</div>
+                            <div class="plazo">Desde @universidad.FechaIniString</div>
                         }
                         else
                         {
-                            <div class="plazo">Desde @universidad.FechaIni hasta @universidad.FechaFin</div>
+                            <div class="plazo">Desde @universidad.FechaIniString hasta @universidad.FechaFinString</div>
                         }
                     </div>
                     <div class="bloque_universidad">
@@ -152,7 +152,7 @@
                 </div>
                 <div class="botones">
 
-                    <a id="mostrar_formulario" class="mostrar_formulario boton_notificaciones">Recibir Notificaciones</a>
+                    <a id="mostrar_formulario" class="mostrar_formulario boton_notificaciones" data-oferta-id="@universidad.Id" >Recibir Notificaciones</a>
                     
                     
                     @if (universidad.UniversidadEspecificada == "Universidad de Burgos")
@@ -190,21 +190,24 @@
             }
         </div>
 
-        <div id="fondo"></div>
-        <div id="formulario_flotante" class="form-container">
-            <div class="cabecera">
-                Introduzca su correo electrónico
-            </div>
-
-            <form id="form">
-                <input class="email" id="email" name="email" placeholder="Email">
-                <button class="form-submit-btn" type="submit">Recibir emails</button>
-            </form>
-        </div>
-        <input type="hidden" id="ofertaId" name="ofertaId" value="@universidad.Id">
 
 
     }
+
+    <div id="fondo" style="display: none;"></div>
+    <div id="formulario_flotante" class="form-container" style="display: none;">
+        <div class="cabecera">
+            Introduzca su correo electrónico
+        </div>
+
+        <form id="form">
+            <input type="hidden" id="ofertaId" name="ofertaId">
+            <input class="email" id="email" name="email" placeholder="Email">
+            <button class="form-submit-btn" type="submit">Recibir emails</button>
+        </form>
+    </div>
+
+
     <td colspan="4" align="center">
         @Html.PagedListPager((IPagedList)Model.ListaUniversidades, pagina => Url.Action("Index", "Universidad", new { pagina, Universidad = Model.Universidad, Categoria = Model.Categoria, FechaElegida = Model.FechaElegida }), PagedListRenderOptions.Classic)
     </td>
@@ -216,8 +219,6 @@
 </html>
 
 @section scripts {
-
-    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css" />

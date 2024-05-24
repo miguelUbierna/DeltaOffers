@@ -13,6 +13,8 @@ using System.Net.Mime;
 using System.Text;
 using X.PagedList;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Globalization;
+using Mysqlx.Cursor;
 
 
 
@@ -21,7 +23,7 @@ namespace DeltaOffers.Controllers
     public class UniversidadController : Controller
     {
         private readonly UniversidadesdbContext _context;
-
+        
         public UniversidadController(UniversidadesdbContext context)
         {
             _context = context;
@@ -45,7 +47,7 @@ namespace DeltaOffers.Controllers
 
             if (filtro.FechaElegida != null)
             {
-                DateOnly fechaEnDate = DateOnly.Parse(filtro.FechaElegida);
+                DateOnly fechaEnDate = DateOnly.ParseExact(filtro.FechaElegida, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 query = query.Where(x => x.FechaFin <= fechaEnDate);
             }
 
@@ -62,6 +64,10 @@ namespace DeltaOffers.Controllers
                 respuesta.UniversidadEspecificada = item.UniversidadEspecificada;
                 respuesta.Categoria = item.Categoria;
                 respuesta.Plazo = item.Plazo;
+                var fechaStringIni= string.Format("{0:dd/MM/yyyy}", item.FechaIni); 
+                respuesta.FechaIniString = fechaStringIni;
+                var fechaStringFin = string.Format("{0:dd/MM/yyyy}", item.FechaFin);
+                respuesta.FechaFinString = fechaStringFin;
                 respuesta.FechaIni = item.FechaIni;
                 respuesta.FechaFin = item.FechaFin;
                 respuesta.ImagenLogo = item.ImagenLogo;
@@ -96,7 +102,7 @@ namespace DeltaOffers.Controllers
 
             var builder = new BodyBuilder
             {
-                TextBody = "Se adjunta en este correo un archivo para añadir a su calendario la siguiente convocatoria: " + convocatoria.Titulo
+                TextBody = "DeltaOffers Informa: \n\nSe adjunta en este correo un archivo para añadir a su calendario la siguiente convocatoria: \n" + convocatoria.Titulo + "\n\nEquipo de DeltaOffers."
             };
 
             byte[] archivo = Encoding.UTF8.GetBytes(archivoAdjunto);
@@ -120,11 +126,15 @@ namespace DeltaOffers.Controllers
 
             var convocatoria = _context.Universidades.Where(x => x.Id == ofertaId).FirstOrDefault();
 
+            var zonaHoraria = TimeZoneInfo.FindSystemTimeZoneById("Central European Standard Time");
+            
             var fecha_fin_inicio = new DateTime(convocatoria.FechaFin.Value.Year, convocatoria.FechaFin.Value.Month, convocatoria.FechaFin.Value.Day, 0, 0, 0);
-            var fecha_fin_inicio_formateada = fecha_fin_inicio.ToUniversalTime().ToString("yyyyMMdd'T'HHmmss'Z'");
+            var fechaFinInicioEnZonaHoraria = TimeZoneInfo.ConvertTimeToUtc(fecha_fin_inicio, zonaHoraria);
+            var fecha_fin_inicio_formateada = fechaFinInicioEnZonaHoraria.ToUniversalTime().ToString("yyyyMMdd'T'HHmmss'Z'");
 
             var fecha_fin_fin = fecha_fin_inicio.AddHours(24);
-            var fecha_fin_fin_formateada = fecha_fin_fin.ToUniversalTime().ToString("yyyyMMdd'T'HHmmss'Z'");
+            var fechaFinFinEnZonaHoraria = TimeZoneInfo.ConvertTimeToUtc(fecha_fin_fin, zonaHoraria);
+            var fecha_fin_fin_formateada = fechaFinFinEnZonaHoraria.ToUniversalTime().ToString("yyyyMMdd'T'HHmmss'Z'");
 
             var resumen = "Fin de plazo convocatoria " + convocatoria.Categoria + " " + convocatoria.UniversidadEspecificada;
             var descripcion = convocatoria.Titulo;

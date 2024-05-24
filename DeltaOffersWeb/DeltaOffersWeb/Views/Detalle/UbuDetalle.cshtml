@@ -49,7 +49,7 @@
                     <div class="publicacion_campo">
                         FECHA PUBLICACIÓN:
                     </div>
-                    <div class="fecha_publicacion">@Model.FechaPublic</div>
+                    <div class="fecha_publicacion">@Model.FechaPublicString</div>
                 </div>
                 <div class="bloque_plazo">
                     <div class="plazo_campo">
@@ -57,15 +57,15 @@
                     </div>
                     @if (@Model.FechaIni == null)
                     {
-                        <div class="plazo">Hasta @Model.FechaFin</div>
+                        <div class="plazo">Hasta @Model.FechaFinString</div>
                     }
                     else if (Model.FechaFin == null)
                     {
-                        <div class="plazo">Desde @Model.FechaIni</div>
+                        <div class="plazo">Desde @Model.FechaIniString</div>
                     }
                     else
                     {
-                        <div class="plazo">Desde @Model.FechaIni hasta @Model.FechaFin</div>
+                        <div class="plazo">Desde @Model.FechaIniString hasta @Model.FechaFinString</div>
                     }
                 </div>
 

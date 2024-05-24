@@ -1,0 +1,20 @@
+
+
+.header[b-g1racym6lz] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #000000;
+}
+
+.logo[b-g1racym6lz] {
+    width: 100px;
+    /* ajustar el tamaño según tu logo */
+}
+
+.iniciar_sesion[b-g1racym6lz] {
+    font-weight: 500;
+    font-style: normal;
+    color: white;
+}

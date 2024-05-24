@@ -1,5 +1,7 @@
 ﻿
 
+using System.ComponentModel.DataAnnotations;
+
 namespace DeltaOffers.ViewModels
 {
     public class MaestroViewModel
@@ -14,6 +16,10 @@ namespace DeltaOffers.ViewModels
         public DateOnly? FechaIni { get; set; }
 
         public DateOnly? FechaFin { get; set; }
+
+        public string? FechaIniString { get; set; }
+
+        public string? FechaFinString { get; set; }
 
         public string? Categoria { get; set; }
 

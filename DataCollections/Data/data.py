@@ -50,10 +50,10 @@ print(len(scraperPAS.uva_general[0]))
 
 
 conexion = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="1234",
-    database="universidadesdb"
+    host="delta-offers.mysql.database.azure.com",
+    user="deltaadmin",
+    password="Offers2002",
+    database="convocatoriasdb"
 )
 
 cursor = conexion.cursor()

@@ -15,6 +15,10 @@
 
         public DateOnly? FechaFin { get; set; }
 
+        public string? FechaIniString { get; set; }
+
+        public string? FechaFinString { get; set; }
+
         public string? Categoria { get; set; }
 
         public string? Enlace { get; set; }

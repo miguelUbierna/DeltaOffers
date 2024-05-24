@@ -14,6 +14,10 @@
 
         public DateOnly? FechaFin { get; set; }
 
+        public string? FechaIniString { get; set; }
+
+        public string? FechaFinString { get; set; }
+
         public string? Categoria { get; set; }
 
         public string? Enlace { get; set; }
@@ -21,6 +25,8 @@
         public string? Descripcion { get; set; }
 
         public DateOnly? FechaPublic { get; set; }
+
+        public string? FechaPublicString { get; set; }
 
         public string? Convocante { get; set; }
 
