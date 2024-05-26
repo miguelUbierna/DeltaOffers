@@ -25,24 +25,8 @@ jobs:
         run: |
           .\env\Scripts\activate
           pip install -r DataCollections\requirements.txt
-        shell: cmd
-
-      - name: Verifico instalación de dependencias
-        run: |
-          .\env\Scripts\activate
-          pip list
-        shell: cmd
-
-      - name: Compruebo las dependencias instaladas
-        run: |
-          .\env\Scripts\activate
-          where python
-          where pip
-        shell: cmd
 
       - name: Ejecuto el script data.py
         run: |
-          .\env\Scripts\activate
           python DataCollections\Data\data.py
-        shell: cmd
 
