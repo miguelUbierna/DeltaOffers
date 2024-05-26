@@ -28,5 +28,5 @@ jobs:
 
       - name: Ejecuto el script data.py
         run: |
-          python DataCollections\Data\data.py
+          python DataCollections\Scrapers\ScrapingUBU\scrapingUBU.py
 

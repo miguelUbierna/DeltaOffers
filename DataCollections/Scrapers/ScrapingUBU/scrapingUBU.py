@@ -207,3 +207,11 @@ class UBUScraper(ScrapingInterface):
                     link_ubu_siguientes_paginas)
                 link_ubu_siguientes_paginas = ''
             contador_paginas += 1
+
+
+scraperUBU = UBUScraper()
+scraperUBU.extraer_datos_paginas()
+scraperUBU.tabla_limpia()
+print(scraperUBU.ubu_general)
+print(len(scraperUBU.ubu_general))
+print(len(scraperUBU.ubu_general[0]))

@@ -187,6 +187,13 @@ cursor.close()
 conexion.close()
 
 
-if not os.path.exists("db_actualizacion_log.txt"):
-    with open("db_actualizacion_log.txt", "w") as log_file:
+log_file_path = "db_actualizacion_log.txt"
+
+# Si el archivo no existe, crea uno nuevo con el registro inicial
+if not os.path.exists(log_file_path):
+    with open(log_file_path, "w") as log_file:
         log_file.write(f"Base de datos actualizada a las: {datetime.now()}\n")
+
+# Agregar una nueva entrada de registro cada vez que se actualice la base de datos
+with open(log_file_path, "a") as log_file:
+    log_file.write(f"Base de datos actualizada a las: {datetime.now()}\n")
