@@ -21,7 +21,7 @@ jobs:
 
       - name: Configuro PYTHONPATH
         run: |
-          export PYTHONPATH=$PYTHONPATH:/home/runner/work/DeltaOffers/DataCollections
+          $env:PYTHONPATH += ";${env:PYTHONPATH};${env:GITHUB_WORKSPACE}/DataCollections"
 
       - name: Ejecuto el script data.py
         run: |
