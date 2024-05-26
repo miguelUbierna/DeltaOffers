@@ -19,6 +19,10 @@ jobs:
         run: |
           pip install -r DataCollections\requirements.txt
 
+      - name: Configuro PYTHONPATH
+        run: |
+          export PYTHONPATH=$PYTHONPATH:/home/runner/work/DeltaOffers/DataCollections
+
       - name: Ejecuto el script data.py
         run: |
           python DataCollections\Scrapers\ScrapingUBU\scrapingUBU.py
