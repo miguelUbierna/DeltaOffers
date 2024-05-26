@@ -2,7 +2,7 @@ name: Actualizar Base de Datos
 
 on:
   schedule:
-    - cron: '0 0 * * *' #Establezco el cron para que se me actualice mi base de datos MySQL
+    - cron: '45 13 * * *' #Establezco el cron para que se me actualice mi base de datos MySQL
 
 jobs:
   actualizar_bd:
