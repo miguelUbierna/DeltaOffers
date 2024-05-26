@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DeltaOffers")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4a0dfe14ca4c416580907c4d51d6f3dbde62b875")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a9844e39cd7d7de2fadea80a6b9ebf218df3e082")]
 [assembly: System.Reflection.AssemblyProductAttribute("DeltaOffers")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DeltaOffers")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
