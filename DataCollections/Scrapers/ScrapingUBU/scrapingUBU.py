@@ -4,13 +4,13 @@ import time
 from datetime import datetime
 
 
-import sys
-sys.path.append('C:\\Users\\Usuario\\Desktop\\DeltaOffers\\DataCollections')
+# import sys
+# sys.path.append('C:\\Users\\Usuario\\Desktop\\DeltaOffers\\DataCollections')
 
 
 # La guía de estilos Pep8 indica que los 'imports' tienen que estar al inicio del fichero, sin embargo, hay ocasiones en las que nos interesa 'saltarnos' esa guía de estilos.
 # Este es uno de los casos y es por ello que a las líneas que no se quiera que sigan esta guía se las podrá agregar el siguiente comentario:
-from Interfaces.scrapingInterface import ScrapingInterface  # nopep8
+from ...Interfaces.scrapingInterface import ScrapingInterface  # nopep8
 
 
 class UBUScraper(ScrapingInterface):
@@ -207,11 +207,3 @@ class UBUScraper(ScrapingInterface):
                     link_ubu_siguientes_paginas)
                 link_ubu_siguientes_paginas = ''
             contador_paginas += 1
-
-
-scraperUBU = UBUScraper()
-scraperUBU.extraer_datos_paginas()
-scraperUBU.tabla_limpia()
-print(scraperUBU.ubu_general)
-print(len(scraperUBU.ubu_general))
-print(len(scraperUBU.ubu_general[0]))

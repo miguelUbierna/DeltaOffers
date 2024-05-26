@@ -5,11 +5,12 @@ from datetime import datetime
 from PIL import Image
 
 
-sys.path.append('C:\\Users\\Usuario\\Desktop\\DeltaOffers\\DataCollections')
+# sys.path.append('C:\\Users\\Usuario\\Desktop\\DeltaOffers\\DataCollections')
 
-from Scrapers.ScrapingUBU.scrapingUBU import UBUScraper  # nopep8
-from Scrapers.ScrapingULE.scrapingULE import ULEScraper  # nopep8
-from Scrapers.ScrapingUVA.scrapingUVA import UVAScraper  # nopep8
+
+from ..Scrapers.ScrapingUBU.scrapingUBU import UBUScraper  # nopep8
+from ..Scrapers.ScrapingULE.scrapingULE import ULEScraper  # nopep8
+from ..Scrapers.ScrapingUVA.scrapingUVA import UVAScraper  # nopep8
 
 
 scraperUBU = UBUScraper()

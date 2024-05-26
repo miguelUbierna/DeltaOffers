@@ -19,11 +19,7 @@ jobs:
         run: |
           pip install -r DataCollections\requirements.txt
 
-      - name: Configuro PYTHONPATH
-        run: |
-          $env:PYTHONPATH += ";${env:PYTHONPATH};${env:GITHUB_WORKSPACE}/DataCollections"
-
       - name: Ejecuto el script data.py
         run: |
-          python DataCollections\Scrapers\ScrapingUBU\scrapingUBU.py
+          python -m DataCollections.Scrapers.Data.data 
 
