@@ -1,4 +1,5 @@
 import sys
+import os
 import mysql.connector
 from datetime import datetime
 from PIL import Image
@@ -184,3 +185,8 @@ for fila in scraperPAS.uva_general:
 conexion.commit()
 cursor.close()
 conexion.close()
+
+
+if not os.path.exists("db_actualizacion_log.txt"):
+    with open("db_actualizacion_log.txt", "w") as log_file:
+        log_file.write(f"Base de datos actualizada a las: {datetime.now()}\n")
