@@ -27,7 +27,7 @@ jobs:
           pip install -r DataCollections\requirements.txt
         shell: cmd
 
-      - name: Verificar instalación de dependencias
+      - name: Verifico instalación de dependencias
         run: |
           .\env\Scripts\activate
           pip list
