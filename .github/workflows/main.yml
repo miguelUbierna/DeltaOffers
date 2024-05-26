@@ -2,29 +2,26 @@ name: Actualizar Base de Datos
 
 on:
   schedule:
-    - cron: '20 12 * * *' #Establezco el cron para que se me actualice mi base de datos MySQL
+    - cron: '40 12 * * *' #Establezco el cron para que se me actualice mi base de datos MySQL
 
 jobs:
   actualizar_bd:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12' 
+          python-version: '3.x' 
 
       - run: python -m pip install virtualenv
 
       - run: python -m virtualenv env
 
       - run: |
-          source DataCollections/env/bin/activate
-          pip install -r DataCollections/requirements.txt
-
+          .\env\Scripts\activate  
+          pip install -r DataCollections\requirements.txt
 
       - name: Run data.py script
-        run: |
-          source DataCollections/env/bin/activate
-          python DataCollections/Data/data.py  
+        run: python DataCollections\Data\data.py
