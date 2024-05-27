@@ -2,7 +2,7 @@ name: Actualizar Base de Datos
 
 on:
   schedule:
-    - cron: '*/2 * * * *'
+    - cron: '0 0 * * *'
 
 jobs:
   actualizar_bd:
