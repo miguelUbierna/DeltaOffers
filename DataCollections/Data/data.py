@@ -64,8 +64,10 @@ cursor = conexion.cursor()
 delete = "DELETE FROM universidades"
 cursor.execute(delete)
 
-# Cambia la ruta a la ubicación de tu imagen
-ruta_imagen = 'Images/ubuLogo.jpg'
+ruta_actual = os.path.dirname(__file__)
+ruta_imagen = os.path.join(ruta_actual, '..', 'Images', 'ubuLogo.jpg')
+
+# ruta_imagen = '../Images/ubuLogo.jpg'
 with open(ruta_imagen, 'rb') as f:
     logo_ubu = f.read()
 
@@ -107,8 +109,10 @@ for fila in scraperUBU.ubu_general:
                  fecha_fin, fila[7], fila[8], fila[9], fila[10], logo_ubu)
         cursor.execute(insert, datos)
 
+ruta_actual = os.path.dirname(__file__)
+ruta_imagen = os.path.join(ruta_actual, '..', 'Images', 'uleLogo.jpg')
 
-ruta_imagen = 'Images/uleLogo.jpg'
+# ruta_imagen = '../Images/uleLogo.jpg'
 with open(ruta_imagen, 'rb') as f:
     logo_ule = f.read()
 
@@ -119,7 +123,9 @@ for fila in scraperULE.ule_general:
              fila[6], fila[7], fila[8], fila[9], fila[10], fila[11], logo_ule)
     cursor.execute(insert, datos)
 
-ruta_imagen = 'Images/uvaLogo.jpg'
+ruta_actual = os.path.dirname(__file__)
+ruta_imagen = os.path.join(ruta_actual, '..', 'Images', 'uleLogo.jpg')
+# ruta_imagen = '../Images/uvaLogo.jpg'
 with open(ruta_imagen, 'rb') as f:
     logo_uva = f.read()
 
