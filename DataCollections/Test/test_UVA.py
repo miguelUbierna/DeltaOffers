@@ -5,7 +5,11 @@ from unittest.mock import Mock
 from bs4 import BeautifulSoup
 from datetime import date, datetime
 
-sys.path.append('C:\\Users\\Usuario\\Desktop\\DeltaOffers\\DataCollections')
+import os
+
+directorio_actual = os.path.dirname(os.path.abspath(__file__))
+directorio_raiz = os.path.abspath(os.path.join(directorio_actual, '..'))
+sys.path.append(directorio_raiz)
 
 from Scrapers.ScrapingUVA.scrapingUVA import UVAScraper  # nopep8
 

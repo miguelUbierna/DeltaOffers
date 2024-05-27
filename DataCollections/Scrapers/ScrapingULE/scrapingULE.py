@@ -2,13 +2,14 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 import time
+import os
+import sys
 
-# import sys
-# sys.path.append('C:\\Users\\Usuario\\Desktop\\DeltaOffers\\DataCollections')
+directorio_actual = os.path.dirname(os.path.abspath(__file__))
+directorio_raiz = os.path.abspath(os.path.join(directorio_actual, '..', '..'))
+sys.path.append(directorio_raiz)
 
-# La guía de estilos Pep8 indica que los 'imports' tienen que estar al inicio del fichero, sin embargo, hay ocasiones en las que nos interesa 'saltarnos' esa guía de estilos.
-# Este es uno de los casos y es por ello que a las líneas que no se quiera que sigan esta guía se las podrá agregar el siguiente comentario:
-from ...Interfaces.scrapingInterface import ScrapingInterface  # nopep8
+from Interfaces.scrapingInterface import ScrapingInterface  # nopep8
 
 
 class ULEScraper(ScrapingInterface):

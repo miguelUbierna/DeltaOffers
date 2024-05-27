@@ -5,7 +5,16 @@ from unittest.mock import MagicMock
 from bs4 import BeautifulSoup
 from datetime import date, datetime
 
-sys.path.append('C:\\Users\\Usuario\\Desktop\\DeltaOffers\\DataCollections')
+# sys.path.append('C:\\Users\\Usuario\\Desktop\\DeltaOffers\\DataCollections')
+
+# from Scrapers.ScrapingUBU.scrapingUBU import UBUScraper  # nopep8
+
+
+import os
+
+directorio_actual = os.path.dirname(os.path.abspath(__file__))
+directorio_raiz = os.path.abspath(os.path.join(directorio_actual, '..'))
+sys.path.append(directorio_raiz)
 
 from Scrapers.ScrapingUBU.scrapingUBU import UBUScraper  # nopep8
 

@@ -12,17 +12,16 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import WebDriverException
 from datetime import datetime
+import os
 import sys
-
 
 # NOTAS: LA UVA, UTILIZA EN SUS WEBS DEL PDI Y PAS JAVASCRIPT DINÁMICO, ESTO QUIERE DECIR QUE VOY A TENER QUE UTILZIAR SELENIUM.
 # PARA PODER OBTENER CORRECTAMENTE EL CÓDIGO HTML. LAS ETIQUETAS JS ESTAN CARGADAS DE MANERA DINÁMICA.
 
-# sys.path.append('C:\\Users\\Usuario\\Desktop\\DeltaOffers\\DataCollections')
-
-# La guía de estilos Pep8 indica que los 'imports' tienen que estar al inicio del fichero, sin embargo, hay ocasiones en las que nos interesa 'saltarnos' esa guía de estilos.
-# Este es uno de los casos y es por ello que a las líneas que no se quiera que sigan esta guía se las podrá agregar el siguiente comentario:
-from ...Interfaces.scrapingInterface import ScrapingInterface  # nopep8
+directorio_actual = os.path.dirname(os.path.abspath(__file__))
+directorio_raiz = os.path.abspath(os.path.join(directorio_actual, '..', '..'))
+sys.path.append(directorio_raiz)
+from Interfaces.scrapingInterface import ScrapingInterface  # nopep8
 
 
 # Anteriormente, dado que la web de las convocatorias del PDI Y PAS de la UVA eran distintas, utilizaba dos clases diferentes.

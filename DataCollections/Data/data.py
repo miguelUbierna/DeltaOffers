@@ -4,13 +4,14 @@ import mysql.connector
 from datetime import datetime
 from PIL import Image
 
+directorio_actual = os.path.dirname(os.path.abspath(__file__))
+directorio_raiz = os.path.abspath(os.path.join(directorio_actual, '..'))
+sys.path.append(directorio_raiz)
 
-# sys.path.append('C:\\Users\\Usuario\\Desktop\\DeltaOffers\\DataCollections')
 
-
-from ..Scrapers.ScrapingUBU.scrapingUBU import UBUScraper  # nopep8
-from ..Scrapers.ScrapingULE.scrapingULE import ULEScraper  # nopep8
-from ..Scrapers.ScrapingUVA.scrapingUVA import UVAScraper  # nopep8
+from Scrapers.ScrapingUBU.scrapingUBU import UBUScraper  # nopep8
+from Scrapers.ScrapingULE.scrapingULE import ULEScraper  # nopep8
+from Scrapers.ScrapingUVA.scrapingUVA import UVAScraper  # nopep8
 
 
 scraperUBU = UBUScraper()
@@ -66,8 +67,6 @@ cursor.execute(delete)
 
 ruta_actual = os.path.dirname(__file__)
 ruta_imagen = os.path.join(ruta_actual, '..', 'Images', 'ubuLogo.jpg')
-
-# ruta_imagen = '../Images/ubuLogo.jpg'
 with open(ruta_imagen, 'rb') as f:
     logo_ubu = f.read()
 
@@ -111,8 +110,6 @@ for fila in scraperUBU.ubu_general:
 
 ruta_actual = os.path.dirname(__file__)
 ruta_imagen = os.path.join(ruta_actual, '..', 'Images', 'uleLogo.jpg')
-
-# ruta_imagen = '../Images/uleLogo.jpg'
 with open(ruta_imagen, 'rb') as f:
     logo_ule = f.read()
 
@@ -124,8 +121,7 @@ for fila in scraperULE.ule_general:
     cursor.execute(insert, datos)
 
 ruta_actual = os.path.dirname(__file__)
-ruta_imagen = os.path.join(ruta_actual, '..', 'Images', 'uleLogo.jpg')
-# ruta_imagen = '../Images/uvaLogo.jpg'
+ruta_imagen = os.path.join(ruta_actual, '..', 'Images', 'uvaLogo.jpg')
 with open(ruta_imagen, 'rb') as f:
     logo_uva = f.read()
 
@@ -192,15 +188,3 @@ for fila in scraperPAS.uva_general:
 conexion.commit()
 cursor.close()
 conexion.close()
-
-
-log_file_path = "db_actualizacion_log.txt"
-
-# Si el archivo no existe, crea uno nuevo con el registro inicial
-if not os.path.exists(log_file_path):
-    with open(log_file_path, "w") as log_file:
-        log_file.write(f"Base de datos actualizada a las: {datetime.now()}\n")
-
-# Agregar una nueva entrada de registro cada vez que se actualice la base de datos
-with open(log_file_path, "a") as log_file:
-    log_file.write(f"Base de datos actualizada a las: {datetime.now()}\n")
