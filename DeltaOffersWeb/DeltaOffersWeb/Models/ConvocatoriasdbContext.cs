@@ -4,26 +4,26 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DeltaOffers.Models;
 
-public partial class UniversidadesdbContext : DbContext
+public partial class ConvocatoriasdbContext : DbContext
 {
-    public UniversidadesdbContext()
+    public ConvocatoriasdbContext()
     {
     }
 
-    public UniversidadesdbContext(DbContextOptions<UniversidadesdbContext> options)
+    public ConvocatoriasdbContext(DbContextOptions<ConvocatoriasdbContext> options)
         : base(options)
     {
     }
 
-    public virtual DbSet<Universidad> Universidades { get; set; }
+    public virtual DbSet<Convocatorias> Universidades { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Universidad>(entity =>
+        modelBuilder.Entity<Convocatorias>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PRIMARY");
 
-            entity.ToTable("universidades");
+            entity.ToTable("convocatorias");
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Categoria)

@@ -6,9 +6,9 @@ namespace DeltaOffers.Controllers
 {
     public class DetalleController : Controller
     {
-        private readonly UniversidadesdbContext _context;
+        private readonly ConvocatoriasdbContext _context;
 
-        public DetalleController(UniversidadesdbContext context)
+        public DetalleController(ConvocatoriasdbContext context)
         {
             _context = context;
         }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DeltaOffers.Models;
 
-public partial class Universidad
+public partial class Convocatorias
 {
     public int Id { get; set; }
 

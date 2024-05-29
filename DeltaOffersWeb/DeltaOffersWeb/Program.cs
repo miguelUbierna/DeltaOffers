@@ -13,7 +13,7 @@ builder.Services.AddControllersWithViews();
 
 
 var connectionString = builder.Configuration.GetConnectionString("MySqlConnection");
-builder.Services.AddDbContext<UniversidadesdbContext>(options =>
+builder.Services.AddDbContext<ConvocatoriasdbContext>(options =>
 {
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });

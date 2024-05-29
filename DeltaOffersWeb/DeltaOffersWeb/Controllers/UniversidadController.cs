@@ -22,9 +22,9 @@ namespace DeltaOffers.Controllers
 {
     public class UniversidadController : Controller
     {
-        private readonly UniversidadesdbContext _context;
+        private readonly ConvocatoriasdbContext _context;
         
-        public UniversidadController(UniversidadesdbContext context)
+        public UniversidadController(ConvocatoriasdbContext context)
         {
             _context = context;
         }
@@ -102,7 +102,10 @@ namespace DeltaOffers.Controllers
 
             var builder = new BodyBuilder
             {
-                TextBody = "DeltaOffers Informa: \n\nSe adjunta en este correo un archivo para añadir a su calendario la siguiente convocatoria: \n" + convocatoria.Titulo + "\n\nEquipo de DeltaOffers."
+                TextBody = "DeltaOffers Informa: \n\nSe adjunta en este correo un archivo para añadir a su calendario la fecha de finalización de siguiente convocatoria: \n" 
+                + convocatoria.Titulo + "\n" +
+                "Puedes acceder a ella mediante el siguiente enlace: " + convocatoria.Enlace
+                + "\n\nEquipo de DeltaOffers."
             };
 
             byte[] archivo = Encoding.UTF8.GetBytes(archivoAdjunto);
