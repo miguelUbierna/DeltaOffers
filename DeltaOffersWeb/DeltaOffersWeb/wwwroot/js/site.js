@@ -54,7 +54,7 @@ document.getElementById("form").addEventListener("submit", function (event) {
 
             },
             error: function (error) {
-                mostrarAlertaMal("Hubo un error al enviar el email.");
+                mostrarAlertaMal("Has llegado al número máximo de avisos mensuales");
             }
         });
     } else {

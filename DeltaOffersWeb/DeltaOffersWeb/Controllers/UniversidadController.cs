@@ -86,8 +86,44 @@ namespace DeltaOffers.Controllers
         }
 
         [HttpPost]
-        public void SendEmail(string email, int ofertaId)
+        public IActionResult SendEmail(string email, int ofertaId)
         {
+
+            var comprobarEmailSuscrito = _context.Suscripciones.Where(x=>x.Email == email).Select(x=>x.Email).FirstOrDefault();
+
+            //Si el usuario es la primera vez que se suscribe
+            if (comprobarEmailSuscrito == null)
+            {
+                Suscripcion nuevaSuscripcion = new Suscripcion();
+
+                nuevaSuscripcion.Email = email;
+                nuevaSuscripcion.NumAvisos = 1;
+
+                _context.Suscripciones.Add(nuevaSuscripcion);
+
+                _context.SaveChanges();
+            }
+            else
+            {
+                var numSuscripcionesUsuarioSuscrito = _context.Suscripciones.Where(x => x.Email == email).Select(x => x.NumAvisos).FirstOrDefault();
+                var idUsuario = _context.Suscripciones.Where(x => x.Email == email).Select(x=>x.Id).FirstOrDefault();
+
+                if (numSuscripcionesUsuarioSuscrito >= 5)
+                {
+                    return BadRequest();
+                }
+
+
+                Suscripcion suscripcionExistente = new Suscripcion();
+
+                suscripcionExistente.Id = idUsuario;
+                suscripcionExistente.Email = email;
+                suscripcionExistente.NumAvisos = numSuscripcionesUsuarioSuscrito + 1;
+
+                _context.Suscripciones.Update(suscripcionExistente);
+
+                _context.SaveChanges();
+            }
 
             var archivoAdjunto = GenerarArchivoICS(ofertaId);
             var convocatoria = _context.Universidades.Where(x => x.Id == ofertaId).FirstOrDefault();
@@ -121,7 +157,8 @@ namespace DeltaOffers.Controllers
                 client.Send(message); 
                 client.Disconnect(true);
             }
-            
+
+            return Ok();
         }
 
         private string GenerarArchivoICS(int ofertaId)

@@ -3,7 +3,7 @@
 \section{Introducción}
 En los años actuales, se viene dando gran prioridad a dedicar tiempo y recursos para realizar una  planificación del proyecto de calidad. Esto se debe a que en todo proyecto es muy importante asentar unas bases planificativas y de estructura antes de ponernos a trabajar en los aspectos más técnicos.
 
-Este plan de proyecto nos indicará los pasos a seguir para que el resultado se un proyecto sea satisfactorio y por lo tanto se consiga alcanzar el éxito.
+Este plan de proyecto nos indicará los pasos a seguir para que el resultado de un proyecto sea satisfactorio y por lo tanto se consiga alcanzar el éxito.
 
 Esta fase de planificación va estar fragmentada en dos partes:
 \begin{itemize}
@@ -13,7 +13,7 @@ Esta fase de planificación va estar fragmentada en dos partes:
 \textbf{Estudio de viabilidad: } Donde se realizará un estudio económico con su respectivo análisis de costes y beneficios y, por otro lado, un estudio legal en el que se analizará todas las leyes que pueden llegar a estar involucradas en el proyecto.
 \end{itemize}
 
-Ambas partes deben de tenerse en cuenta a la hora de realizar un proyecto y si se realizan correctamente, estarémos en una situación ventajosa para llevar a cabo el proyecto con el menor número de contratiempos y problemas posibles. 
+Ambas partes deben de tenerse en cuenta a la hora de realizar un proyecto y si se realizan correctamente, estaremos en una situación ventajosa para llevar a cabo el proyecto con el menor número de contratiempos y problemas posibles. 
 \section{Planificación temporal}
 La gestión de este proyecto, se ha llevado a cabo siguiendo una metodología Scrum. Es por ello por lo que se han ido realizando desarrollos iterativos e incrementales los cuales se han ido subiendo a la plataforma de desarrollo GitHub cada 2 semanas. Durante estos \textit{sprints} de dos semanas de duración, se acordaba una reunión retrospectiva con los tutores en la cual se hacían revisiones de las tareas realizadas durante el \textit{sprint} y se planteaban nuevas tareas para \textit{sprints} futuros.
 
@@ -108,7 +108,30 @@ Con la finalización de este \textit{sprint} se consideraba que la funcionalidad
 Esta iteración, fue una de las finales del proyecto y como consecuencia, se dedicó gran parte del tiempo para realizar la documentación. Para ello, se recopilarón todas las anotaciones, datos y tareas de los anteriores \textit{sprints}. 
 
 Por otro lado, se ha comenzado a dedicar gran parte del tiempo a la investigación sobre las distinas posibilidades que hay para lanzar la aplicación de manera gratuita para que pueda ser probada por cualquier usuario.
+
+Por último, dado que la integración con Google Calendar solo era viable realizarla con usuarios de testing, se decidió eliminar esta integración e incorporar a la web un sistema de avisos por correo en la que se enviaban adjuntos archivos ICalendar para que cada usuario pudiese añadir sus convocatorias de interés como eventos a sus calendarios personales.
+
+En este sprint, al igual que en la mayoria de los anteriores, también se dedico parte de tiempo a corrección de errores y mejoras.
 \imagensprint{sprint7}{Sprint 7.}
+
+
+\subsection{Sprint 8 (16/05/2024 -
+30/05/2024)}
+En esta etapa, se continuo trabajando con la documentación del proyecto. Además, pese a tener algunos problemas con algunas herramientas utilizadas para hacer el \textit{deployment}, se acabó realizando satisfactoriamente mediante la utilización de un plan gratuito de Azure services. 
+
+Por otro lado, se realizó de la implementación de un cron para mantener la base de datos actualizada. Esto lo pude hacer gracias a GitHub actions.
+
+Finalmente, también se realizó alguna mejora en el código. Hasta ahora, para la importación de paquetes se estaba trabajando con rutas relativas y para un mejor despliegue, se comenzaron a utilizar rutas absolutas. Este es uno de los cambios más destacables en cuanto a código en esta iteración.
+\imagensprint{sprint8}{Sprint 8.}
+
+\subsection{Sprint 9 (31/05/2024 -
+12/06/2024)}
+Con esta iteración se pondría broche final al proyecto. Ya con el despliegue de la aplicación realizado, se dedico la mayoría del tiempo a la preparación de la documentación y ultimos detalles del proyecto para entregarlo al tribunal.
+
+Se realizarón las ultimas mejoras en el código y se realizó una carga del proyecto en una maquina virtual. Esta maquina virtual se almacenará en un USB para su posterior entrega al tribunal.
+
+
+\imagensprint{sprint9}{Sprint 9.}
 
 \subsection{Resumen}
 
@@ -215,7 +238,6 @@ Los productos y servicios mencionados previamente, se consideran los siguientes:
 
 \begin{table}[H]
     \centering
-    \renewcommand{\arraystretch}{1.2}
     \setlength{\tabcolsep}{20pt}
     \begin{tabular}{l l}
         \hline
@@ -260,5 +282,63 @@ Por esta razón, en caso de que la aplicación pasase a desarrollo, esta misma s
 Por otro lado, si se quisiese obtener un beneficio económico de la misma, se podría plantear la implantación de anuncios y publicidad. Otra opción válida como modelo de negocio, sería el cobro de un importe para aquellos usuarios que hayan accedido a una convocatoria gracias a esta web y hayan sido elegidos para el puesto solicitado.
 
 \subsection{Viabilidad legal}
+Al igual que la viabilidad economica, la viabilidad legal también es un aspecto muy importante a considerar a la hora de planificar un proyecto software. Este apartado va a consistir en el analisis del cumplimiento de leyes por parte del proyecto y las licencias de software. 
+
+En primer lugar, en cuanto al contenido multimedia utilizado, ha sido obtenido en distintas webs cuyos contenidos estan libres de \textit{copyright} bajo la licencia \textbf{CC0 (Creative Commons Zero)}. Esto implica que ese contenido multimedia puede ser utilizado sin tener permisos debido a que no están protegidas por derechos de autor. En este caso, se ha dado alguna excepción a la hora de obtener los logos de las distinats universidades involucradas en el proyecto.
+
+Estas imagenes han sido obtenidas a través de las webs de las propias universidades. En principio, dado que esto es un proyecto educativo, estas imagenes pueden ser utilizadas sin ningún inconveniente. Además, en el caso de que el proyecto pasase a desarrollo, no se prevee tener ningun inconveniente en este aspecto legal con las mismas dado que los beneficiarios de que esta aplicación pasase a desarrollo serían las propias universidades.
+
+Posteriormente, se van a analizar las licencias de las dependencias utilizadas en el proyecto. Este proceso lo vamos a dividir en 2 partes. En primer lugar se van a analizar las dependencias utilizadas en cuanto al proceso de web scraping realizado con python. Estas depencias se han gestionado mediante el entorno \textit{virtualenv} para python y son las siguientes:
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2} % Ajusta el espacio entre filas
+    \begin{tabularx}{\textwidth}{l l X l}
+        \hline
+        \textbf{Dependencia} & \textbf{Versión} & \textbf{Descripción} & \textbf{Licencia} \\
+        \hline
+        autopep8 & 2.0.4 & Guía de estilos para Python & MIT \\
+        beautifulsoup4 & 4.12.3 & Biblioteca para la extracción de datos en HTML & MIT \\
+        mysql-connector-python & 8.3.0 & Herramienta para conexión con la base de datos & GPL \\
+        pillow & 10.3.0 & Biblioteca para el tratamiento de imagenes & BSD \\
+        pytest & 8.1.1 & Herramienta para implementacion de testing & MIT \\
+        requests & 2.31.0 & Libreria para hacer peticiones HTTP & Apache2 \\
+        selenium & 4.18.1 & Herramienta automatización sitio web & Apache2 \\
+        \hline
+    \end{tabularx}
+    \caption{Dependencias junto con sus Licencias Python}
+    \label{tab:licencias1}
+\end{table}
+
+\newpage
+Posteriormente, veremos los paquetes que han sido instalados en .NET para la realización de la web junto con sus respectivas licencias:
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2} % Ajusta el espacio entre filas
+    \begin{tabularx}{\textwidth}{X l X l}
+        \hline
+        \textbf{Dependencia} & \textbf{Versión} & \textbf{Descripción} & \textbf{Licencia} \\
+        \hline
+        X PagedList Mvc Core & 9.1.2 & Herramienta para aplicar paginación & MIT \\
+        Pomelo Entity Framework Core MySql& 8.0.2 & Herramienta para la conexión con la base de datos & MIT \\
+        MySql Entity Framework Core & 8.0.2 & Herramienta para conexión con la base de datos & MIT \\
+        Microsoft
+        Entity Framework Core & 8.0.3 & Herramienta para acceso a bases de datos & Apache2 \\
+        Microsoft Entity Framework Core Tools & 8.0.3 & Herramienta para el trabajo con bases de datos mediante objetos & Apache2 \\
+        Mailkit & 4.6.0 & Herramienta envío de emails & Apache2 \\
+        \hline
+    \end{tabularx}
+    \caption{Dependencias junto con sus Licencias .NET}
+    \label{tab:licencias2}
+\end{table}
+
+Tal y como hemos podido apreciar anteriormente, la mayoria de dependencias de este proyecto tienen una licencia de software MIT o Apache v2.0 ambas licencias son bastante permisivas y disponen de gran disponibilidad en cuanto a su uso.
+
+Una vez evaluado lo anterior, se ha decicido que el código fuente sea público para que pueda ser modificado, estudiado y utilizado por cualquier persona sin restricciones de propiedad intelectual o de licencia. Por lo tanto, la licencia otorgada al proyecto será una licencia \textbf{MIT} esta licencia permite a los usuarios utilizar, modificar y distribuir el software sin restricciones, siempre y cuando se proporcione atribución al autor original y se incluya un aviso de derechos de autor en todas las copias del software.
+
+Además, otro aspecto importante a considerar, es que esta licencia nos permite compatibilidad con Apache v2.0. Algo que puede ser ventajoso de cara al futuro y nuevas implementaciones.
+
+Mediante la elección de esta licencia se contribuye enormemente con la comunidad dado que el producto se podrá utilizar y compartir con total libertad.
 
 

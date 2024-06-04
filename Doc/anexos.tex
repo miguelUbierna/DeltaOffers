@@ -8,6 +8,7 @@
 \usepackage{lmodern} % scalable font
 \usepackage{microtype}
 \usepackage{placeins}
+\usepackage{lscape}
 
 \RequirePackage{booktabs}
 \RequirePackage[table]{xcolor}
@@ -42,6 +43,26 @@
 	\begin{figure}[!h]
 		\centering
 		\includegraphics[width=0.9\textwidth]{#1}
+		\caption{#2}\label{fig:#1}
+	\end{figure}
+	\FloatBarrier
+}
+
+\usepackage{graphicx}
+\newcommand{\imagenentidad}[2]{
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.5\textwidth]{#1}
+		\caption{#2}\label{fig:#1}
+	\end{figure}
+	\FloatBarrier
+}
+
+\usepackage{graphicx}
+\newcommand{\imagenapaisada}[2]{
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=1.4\textwidth]{#1}
 		\caption{#2}\label{fig:#1}
 	\end{figure}
 	\FloatBarrier

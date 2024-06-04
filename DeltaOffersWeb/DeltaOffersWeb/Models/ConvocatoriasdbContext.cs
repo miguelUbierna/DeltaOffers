@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DeltaOffers.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace DeltaOffers.Models;
@@ -16,6 +17,8 @@ public partial class ConvocatoriasdbContext : DbContext
     }
 
     public virtual DbSet<Convocatorias> Universidades { get; set; }
+
+    public virtual DbSet<Suscripcion> Suscripciones { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -58,6 +61,23 @@ public partial class ConvocatoriasdbContext : DbContext
             entity.Property(e => e.UniversidadEspecificada)
                 .HasMaxLength(50)
                 .HasColumnName("universidad");
+        });
+
+        modelBuilder.Entity<Suscripcion>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
+
+            entity.ToTable("suscripciones");
+
+            entity.HasIndex(e => e.Email, "email").IsUnique();
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Email)
+                .HasMaxLength(50)
+                .HasColumnName("email");
+            entity.Property(e => e.NumAvisos)
+                .HasDefaultValueSql("'0'")
+                .HasColumnName("num_avisos");
         });
 
         OnModelCreatingPartial(modelBuilder);
