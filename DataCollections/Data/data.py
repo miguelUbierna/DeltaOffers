@@ -37,9 +37,6 @@ scraperPDI.obtener_datos()
 print(scraperPDI.uva_general)
 print(len(scraperPDI.uva_general))
 print(len(scraperPDI.uva_general[0]))
-print('************************')
-print('************************')
-print('************************')
 
 
 link_UVA_PAS = 'https://pas.uva.es/1.convocatorias/'

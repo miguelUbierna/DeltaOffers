@@ -44,7 +44,7 @@ class UVAScraper(ScrapingInterface):
     def obtener_estados(self, fecha_ini, fecha_fin):
         # En ocasiones la web 'scrapeada' no nos indica alguna de las fechas y por lo tanto no podemos conocer si la oferta está en plazo o no.
         if fecha_ini == 'No especificado' or fecha_fin == 'No especificado':
-            self.filas.append('NO ESPECIFICADO')
+            self.filas.append('CONVOCATORIA CERRADA')
         else:
             fecha_actual = datetime.now().date()
 

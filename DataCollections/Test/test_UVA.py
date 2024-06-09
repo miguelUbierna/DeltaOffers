@@ -85,7 +85,7 @@ class TestScrapingUVA(unittest.TestCase):
 
         scraper.obtener_plazos_solicitud(mock_contenedor)
 
-        self.assertIn("No especificado", scraper.filas)
+        self.assertIn("CONVOCATORIA CERRADA", scraper.filas)
 
 
 if __name__ == '__main__':
