@@ -1,3 +1,49 @@
 \capitulo{1}{Introducción}
 
-Descripción del contenido del trabajo y del estructura de la memoria y del resto de materiales entregados.
+En las universidades españolas, existen dos colectivos que garantizan el desarrollo académico y administrativo. El \textbf{Personal Docente e Investigador}, es el encargado de desempeñar las funciones de docencia, investigación y gestión académica de las universidades. Este colectivo está formado por profesores, investigadores, ayudantes y catedráticos. 
+
+Por otro lado, el \textbf{Personal de Administración y Servicios}, es el encargado de la gestión administrativa, la prestación de servicios y el soporte a la docencia e investigación. Este colectivo esta formado principalmente por administrativos, personal de mantenimiento y servicios y personal técnico.
+
+Ambos colectivos son fundamentales para que el funcionamiento de las universidades sea exitoso. Por esta razón, las universidades necesitan que estos puestos sean desempeñados por personas altamente cualificadas y competentes.
+
+«DeltaOffers», es un proyecto formado por dos aplicaciones independientes. La primera es una aplicación que realiza \textit{web scraping} a las webs de las universidades públicas de Castilla y León para recopilar sus convocatorias y almacenarlas en una base de datos. La segunda, es una aplicación web que tiene como objetivo mostrar todas las convocatorias recopiladas de PDI y PAS de una manera centralizada.
+
+Con la aparición de «DeltaOffers» se espera poner fin a la ausencia de candidatos para plazas de PDI Y PAS de las universidades gracias a que, cualquier persona independientemente de la provincia en la que esté residiendo, podrá enterarse de las convocatorias sin necesidad de tener que acudir a las propias webs de las universidades.
+
+Por otro lado, la existencia de una web centralizada de convocatorias, tiene como consecuencia un mayor alcance de las mismas. Estas convocatorias podrán llegar con una mayor facilidad a los posibles interesados lo que  implicaría un aumento en la demanda de determinados puestos de trabajo y como consecuencia, se espera incrementar la calidad del personal que finalmente sea seleccionado para cubrir una determinada plaza.
+
+Esta web no solo centraliza todas las convocatorias de estas universidades sino que también lo hace con un diseño atractivo y una alta usabilidad proporcionando además funcionalidad adicional como un sistema de avisos por correo electrónico.
+
+Este proyecto podría suponer un gran avance para las universidades públicas de Castilla y León mediante la contribución a un Personal Docente e Investigador y Personal de Administración y Servicios de calidad.
+
+\section{Estructura de la memoria}
+
+La estructura de la memoria es la siguiente:
+
+\begin{itemize}
+    \item \textbf{Introducción:}  incluye una descripción del entorno del proyecto y del proyecto en si. Además, se detalla cual es la estructura de la memoria y del resto de materiales entregados.
+    \item \textbf{Objetivos del proyecto:} expone cuales son los objetivos que se persiguen con la realización del proyecto. La mayoría de estos objetivos fueron diseñados al comienzo del proyecto y otros se han ido añadiendo en el transcurso del mismo.
+    \item \textbf{Conceptos teóricos:} muestra los conceptos teóricos necesarios de comprender para un mejor entendimiento global del proyecto.
+    \item \textbf{Técnicas y herramientas:} detalla las técnicas y herramientas utilizadas para el proyecto.
+    \item \textbf{Aspectos relevantes del proyecto:}  expone los aspectos más relevantes del proyecto y las soluciones aplicadas en estos casos.  
+    \item \textbf{Trabajos relacionados:} presenta algunos proyectos relacionados con el trabajo realizado.
+    \item \textbf{Conclusiones y líneas de trabajo futuras:} detalla las conclusiones obtenidas tras la finalización del proyecto junto con un análisis sobre cómo se podría realizar una continuación y mejora del proyecto.    
+\end{itemize}
+
+\section{Estructura de los anexos}
+\begin{itemize}
+    \item \textbf{Plan de proyecto software:} indica cual ha sido la planificación del proyecto junto con un estudio de viabilidad legal y económica del mismo.
+    \item \textbf{Especificación de requisitos:} describe cómo se va a comportar el sistema que ha sido desarrollado.
+    \item \textbf{Especificación de diseño:} expone la estructura de los datos, los procedimientos utilizados y los patrones de diseño empleados.
+    \item \textbf{Documentación técnica de programación:} detalla guías e información técnica del proyecto.
+    \item \textbf{Documentación de usuario:} muestra una guía de utilización del producto realizado.  
+    \item \textbf{Anexo de sostenibilización curricular:} relaciona el proyecto realizado con los objetivos del desarrollo sostenible.  
+\end{itemize}
+
+\section{Estructura del software}
+Junto con los anexos y la memoria, se realizará también la entrega del software desarrollado, el cual, tendrá la siguiente estructura.
+\begin{itemize}
+    \item \textbf{DataCollections:} Este directorio incluye la sección del proyecto en la que se realiza el \textit{web scraping} y el \textit{script} con el que se actualiza la base de datos. Por otro lado, también están aquí ubicados los test unitarios de la parte de recopilación de datos.
+    \item \textbf{DeltaOffersWeb:} Esta carpeta contiene el proyecto en .NET mediante el que se desarrolla la página web. En él se encontrarán distintos directorios para controladores, vistas y modelos junto con otros ficheros de ajustes, ejecución , etc.
+    \item \textbf{Github Workflows:} Este directorio contiene los archivos de extensión \textit{.yml} los cuales son los encargados de realizar las tareas programadas correspondientes al proyecto mediante \textit{cron}.
+\end{itemize}

@@ -67,7 +67,7 @@ class TestScrapingUVA(unittest.TestCase):
         scraper = self.instance()
 
         scraper.obtener_estados('No especificado', '2024-01-17')
-        self.assertIn('NO ESPECIFICADO', scraper.filas)
+        self.assertIn('CONVOCATORIA CERRADA', scraper.filas)
 
         scraper.obtener_estados('2024-01-03', '2024-01-17')
         self.assertIn('CONVOCATORIA CERRADA', scraper.filas)

@@ -1,83 +1,81 @@
 \capitulo{3}{Conceptos teóricos}
+Para un entendimiento general de este proyecto, es necesario conocer previamente algunos conceptos teóricos. Estos conceptos, van a ser desarrollados a continuación. 
 
-En aquellos proyectos que necesiten para su comprensión y desarrollo de unos conceptos teóricos de una determinada materia o de un determinado dominio de conocimiento, debe existir un apartado que sintetice dichos conceptos.
+\section{Web Scraping}
+En este proyecto, el proceso de recopilación de datos ha sido realizado mediante la técnica llamada \textit{web scraping}. Esta técnica consiste en la extracción de contenidos, datos e información de las páginas web mediante la utilización de herramientas software.
 
-Algunos conceptos teóricos de \LaTeX{} \footnote{Créditos a los proyectos de Álvaro López Cantero: Configurador de Presupuestos y Roberto Izquierdo Amo: PLQuiz}.
+Esta metodología es muy común debido a su facilidad de extraer grandes cantidades de datos de una manera automatizada.
 
-\section{Secciones}
+Actualmente, este proceso se puede realizar en un lenguaje de programación en concreto mediante la utilización de bibliotecas o con herramientas existentes dedicadas a realizar estas labores. El inconveniente de estas herramientas es que algunas no son de suficiente calidad o tienes que pagar por ellas por lo tanto se recomienda que si se tienen conocimientos de programación, se realice este proceso mediante código. 
 
-Las secciones se incluyen con el comando section.
-
-\subsection{Subsecciones}
-
-Además de secciones tenemos subsecciones.
-
-\subsubsection{Subsubsecciones}
-
-Y subsecciones. 
-
-
-\section{Referencias}
-
-Las referencias se incluyen en el texto usando cite~\cite{wiki:latex}. Para citar webs, artículos o libros~\cite{koza92}, si se desean citar más de uno en el mismo lugar~\cite{bortolot2005, koza92}.
-
-
-\section{Imágenes}
-
-Se pueden incluir imágenes con los comandos standard de \LaTeX, pero esta plantilla dispone de comandos propios como por ejemplo el siguiente:
-
-\imagen{escudoInfor}{Autómata para una expresión vacía}{.5}
-
-
-
-\section{Listas de items}
-
-Existen tres posibilidades:
-
+Para la extracción de datos mediante \textit{web scraping} de manera automática podemos encontrar tres principales métodos:
 \begin{itemize}
-	\item primer item.
-	\item segundo item.
+    \item \textbf{Scraping mediante la utilización de bots:} Los cuales extraen la información de la web automáticamente.
+    \item \textbf{Scraping a través de un analizador sintáctico:} En este método, se dispone de un parser que es el encargado de convertir texto a una estructura para el almacenamiento de información. Este ha sido el método usado en este proyecto.
+    \item \textbf{Scraping mediante análisis de textos:} Consiste en la utilización de la función \textit{grep} de Unix para encontrar la información en la web.
 \end{itemize}
 
-\begin{enumerate}
-	\item primer item.
-	\item segundo item.
-\end{enumerate}
+Esta tecnología enormemente potente, es popularmente utilizada en el mundo de la industria. Esto se debe a que se pueden recopilar grandes volúmenes de datos de una manera sencilla con la utilización de la misma.
+    
+Estos datos posteriormente pueden ser tratados y analizados por analistas los cuales se encargan de obtener conclusiones en función de los datos obtenidos. Esas conclusiones obtenidas pueden conllevar decisiones estratégicas y de negocio dentro de las empresas y como consecuencia un aumento en la facturación en muchas de ellas. A continuación se van a detallar algunos casos reales en los que se utiliza el \textit{web scraping} en el mundo empresarial:
 
-\begin{description}
-	\item[Primer item] más información sobre el primer item.
-	\item[Segundo item] más información sobre el segundo item.
-\end{description}
-	
 \begin{itemize}
-\item 
+    \item Estudios de mercado.
+    \item Automatización de negocios.
+    \item Generación de clientes potenciales.
+    \item Análisis y seguimientos en los precios.
+    \item Recopilación de noticias.
 \end{itemize}
 
-\section{Tablas}
+\section{PDI y PAS}
 
-Igualmente se pueden usar los comandos específicos de \LaTeX o bien usar alguno de los comandos de la plantilla.
+Dado que el proyecto no tiene abundantes conceptos teóricos, se ha decidido añadir a este capítulo, un apartado en el que se va a explicar qué es el Personal Docente e Investigador y el Personal de Administración y Servicios. Además, se van a comentar cuales son los procesos de selección que necesita superar una persona para acabar logrando alguna de estas plazas.
 
-\tablaSmall{Herramientas y tecnologías utilizadas en cada parte del proyecto}{l c c c c}{herramientasportipodeuso}
-{ \multicolumn{1}{l}{Herramientas} & App AngularJS & API REST & BD & Memoria \\}{ 
-HTML5 & X & & &\\
-CSS3 & X & & &\\
-BOOTSTRAP & X & & &\\
-JavaScript & X & & &\\
-AngularJS & X & & &\\
-Bower & X & & &\\
-PHP & & X & &\\
-Karma + Jasmine & X & & &\\
-Slim framework & & X & &\\
-Idiorm & & X & &\\
-Composer & & X & &\\
-JSON & X & X & &\\
-PhpStorm & X & X & &\\
-MySQL & & & X &\\
-PhpMyAdmin & & & X &\\
-Git + BitBucket & X & X & X & X\\
-Mik\TeX{} & & & & X\\
-\TeX{}Maker & & & & X\\
-Astah & & & & X\\
-Balsamiq Mockups & X & & &\\
-VersionOne & X & X & X & X\\
-} 
+\subsection{Personal Docente e Investigador}
+El Personal Docente e Investigador es el encargado de desarrollar las funciones de enseñanza e investigación en las universidades \cite{raepdi:latex}. Está compuesto de personal docente e investigador funcionario y de personal contratado.
+
+\textbf{Personal Docente e Investigador funcionario}
+
+Para desempeñar este puesto, en primer lugar se debe tener aprobada una oposición. Además, también es necesario tener la acreditación nacional para el cuerpo correspondiente. Dentro del PDI funcionario encontramos dos tipos:
+
+\begin{itemize}
+    \item Catedráticos
+    \item Profesores titulares
+\end{itemize}
+
+\textbf{Personal Docente e Investigador contratado}
+
+La Ley Orgánica de Universidades, es la encargada de regular las modalidades de contratación para estos profesionales. Al igual que en el PDI funcionario, existen dos grupos bien diferenciados. Estos son, el PDI contratado indefinidamente y el PDI contratado temporalmente. Este segundo grupo no puede ser superior en cuanto a personal que el 40\% de la plantilla docente de una universidad.
+
+Los tipos de PDI contratado que podemos localizar son los siguientes:
+
+\begin{itemize}
+    \item Profesor Ayudante Doctor
+    \item Ayudante
+    \item Profesor Contratado Doctor
+    \item Profesor Visitante
+\end{itemize}
+
+Además, también podemos encontrar la figura del profesor asociado. Estos deben de ser profesionales con una  notoria experiencia profesional y se encargan de impartir docencia \cite{pdi:latex}. 
+
+Para ser elegido como miembro del PDI de una universidad pública, es necesario pasar por un proceso administrativo previo, este proceso se basa en lo siguiente:
+
+\begin{itemize}
+    \item \textbf{Publicación de la convocatoria:} Cada universidad publicará en su propia web las convocatorias que ofertan en las que indican detalles como la titulación requerida, plazas ofertadas, etc.
+    \item \textbf{Presentación de candidatos:} Los interesados en determinadas convocatorias, deberán entregar la documentación requerida en el plazo indicado.
+    \item \textbf{Evaluación de méritos:} Los evaluadores, serán los encargados de determinar a quiénes se van a asignar las plazas en función de la documentación aportada.
+    \item \textbf{Resolución de la convocatoria:} Una vez determinado el miembro o los miembros para ocupar determinadas plazas, se publicará un listado de admitidos y excluidos.
+    \item \textbf{Plazo de subsanación:} En ocasiones es posible que se abra un plazo de subsanación por si se hubiese producido algún error en la selección de los candidatos admitidos.
+\end{itemize}
+
+
+\subsection{Personal de Administración y Servicios}
+
+El PAS, es el encargado de desarrollar la gestión técnica, económica y administrativa de la Universidad \cite{raepas:latex}. Son personas fundamentales para el correcto funcionamiento de las instituciones universitarias y principalmente, podemos dividir este grupo en dos categorías:
+
+\begin{itemize}
+    \item \textbf{PAS laboral:} son aquellos que tienen un contrato laboral vinculado con la universidad. En este grupo se encuentran los auxiliares de servicios, personal de mantenimiento, técnicos informáticos, etc.
+    \item \textbf{PAS funcionario:} son trabajadores que han superado una oposición y están vinculados a la Administración Pública.
+\end{itemize}
+
+El proceso de selección para ser miembro del PAS es muy similar al del PDI mencionado previamente. Sin embargo, en el proceso de selección del PDI, se suelen valorar más los aspectos académicos y la experiencia previa en docencia o investigación mientras que, para el PAS se centran en capacidades más técnicas, habilidades u otras competencias \cite{pas:latex}.

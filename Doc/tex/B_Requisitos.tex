@@ -2,7 +2,7 @@
 
 \section{Introducción}
 
-Los especificación de requisitos en un proyecto software consiste en describir cómo se va a comportar el sistema que ha sido desarrollado. En este apartado, se detallarán los distintos casos de uso los cuales describen las distintas acciones o actividades que va a realizar un actor para que finalmente se lleve a cabo algún proceso.
+Los especificación de requisitos en un proyecto software consiste en describir cómo se va a comportar el sistema que ha sido desarrollado. En este apartado, se detallarán los distintos casos de uso los cuales describen las distintas acciones o actividades que va a realizar un actor para que finalmente se lleve a cabo algún proceso \cite{especificacionrequisitos:latex}.
 
 Tanto los requisitos como los casos de uso son muy importantes en este tipo de proyectos dado que se detallan las funciones que va a realizar el sistema de manera concisa. Además, esto mejora enormemente la comunicación entre el equipo que ha desarrollado el software y el cliente o usuarios finales. Por último, la especificación de estos requisitos cuando se inicia un proyecto, ayuda a localizar los posibles inconvenientes con los que se puede encontrar el equipo de desarrollo a lo largo del mismo.
 
@@ -13,7 +13,7 @@ En este apartado se van a comentar cuales han sido los objetivos del proyecto, a
 \begin{itemize}
 \item En las primeras iteraciones, como es lógico, se invirtió gran parte del tiempo a la planificación y estructuración del proyecto.
 
-\item Recopilación de convocatorias de Personal Docente Investigador y Personal de Administración y Servicios de las Universidades publicas de Castilla y León de sus respectivas páginas web. 
+\item Recopilación de convocatorias de Personal Docente Investigador y Personal de Administración y Servicios de las Universidades públicas de Castilla y León de sus respectivas páginas web. 
 
 \item Interpretar los datos obtenidos, tratamiento de los mismos y almacenarlos de manera segura.
 
@@ -46,7 +46,7 @@ Una vez mencionados los objetivos, se enumerarán los requisitos funcionales y n
 \begin{itemize}
 \item\textbf{RF-2 Visualización de las convocatorias}: La aplicación tiene que ser capaz de mostrar la información de las distintas convocatorias.
 \begin{itemize}
-\item\textbf{RF-2.1 Mostrar listado maestro de las convocatorias}: La aplicación debe de listar en una pagina \textit{maestra} la información esencial y descriptiva de cada convocatoria, esto se realizará de manera paginada.
+\item\textbf{RF-2.1 Mostrar listado maestro de las convocatorias}: La aplicación debe de listar en una paágina \textit{maestra} la información esencial y descriptiva de cada convocatoria, esto se realizará de manera paginada.
 \item\textbf{RF-2.2 Aplicación de filtros}: La web tiene que permitir la aplicación de filtros para que los usuarios puedan acceder más rápido a las convocatorias de interés.
 \item\textbf{RF-2.3 Mostrar Detalles}: La aplicación debe de tener páginas \textit{detalle} con los detalles de las convocatorias que el usuario selecciona.
 
@@ -59,16 +59,16 @@ Una vez mencionados los objetivos, se enumerarán los requisitos funcionales y n
 \begin{itemize}
 \item\textbf{RF-4.1 Suscripción a avisos por correo}: El usuario debe poder suscribirse a recibir avisos por medio del correo electrónico.
 \begin{itemize}
-\item\textbf{RF-4.1.1 Comprobación correo válido }: La aplicación debe comprobar si el correo con el que el usuario se ha suscrito es valido.
+\item\textbf{RF-4.1.1 Comprobación correo válido }: La aplicación debe comprobar si el correo con el que el usuario se ha suscrito es válido.
 \end{itemize}
 \item\textbf{RF-4.2 Recibir avisos}: La aplicación debe enviar avisos por correo de las convocatorias que el usuario desea y el usuario deberá recibir estos.
 \item\textbf{RF-4.3 Recibir archivos ICalendar adjuntos}: La aplicación debe generar un archivo ICalendar con la fecha fin de las convocatorias y adjuntarlo en el correo enviado al usuario.
 \begin{itemize}
-\item\textbf{RF-4.3.1 Compatibilidad ICalendar con principales servicios de calendario}: La aplicación debe proporcionar un de extension ".ics" que debe de ser compatible con Outlook, Google Calendar y otros.
+\item\textbf{RF-4.3.1 Compatibilidad ICalendar con principales servicios de calendario}: La aplicación debe proporcionar un archivo de extension ".ics" que debe de ser compatible con Outlook, Google Calendar y otros.
 \end{itemize}
-\item\textbf{RF-4.4 Acceso al portal de convocatorias de las universidades}: En el correo electronico que recibe el usuario se debe permitir acceder mediante un enlace en la página de detalles a las paginas webs propias de cada universidad.
+\item\textbf{RF-4.4 Acceso al portal de convocatorias de las universidades}: En el correo electrónico que recibe el usuario se debe permitir acceder mediante un enlace en la página de detalles a las páginas webs propias de cada universidad.
 \end{itemize}
-\item\textbf{RF-5 Comienzo de uso de la web}: La aplicación debe mostrar una ventana principal con información de la tematica de la web junto con un acceso para comenzar su uso.
+\item\textbf{RF-5 Comienzo de uso de la web}: La aplicación debe mostrar una ventana principal con información de la temática de la web junto con un acceso para comenzar su uso.
 \end{itemize}
 
 \textbf{Requisitos no funcionales:}
@@ -79,18 +79,14 @@ Una vez mencionados los objetivos, se enumerarán los requisitos funcionales y n
 datos obtenidos serán almacenados de manera segura sin que se pueda acceder de manera no autorizada. 
 \item\textbf{RNF-3 Usabilidad:} La experiencia del usuario al interactuar con el sistema es buena. La web es intuitiva y facil de utilizar. La curva de aprendizaje es muy pequeña. 
 \item\textbf{RNF-4 Disponibilidad:} La aplicación web esta disponible para los usuarios siempre y cuando tengan conexión a internet.
-\item\textbf{RNF-5 Mantenibilidad:} La aplicación web será facil de mantener siempre y cuando la estructura HTML de las webs de las que se extraen los datos sea la misma. En el caso de que no, la web necesitará de soporte. La implementación de test unitarios facilita enormement este aspecto.
+\item\textbf{RNF-5 Mantenibilidad:} La aplicación web será facil de mantener siempre y cuando la estructura HTML de las webs de las que se extraen los datos sea la misma. En el caso de que no, la web necesitará de soporte. La implementación de test unitarios facilita enormemente este aspecto.
 \item\textbf{RNF-6 Escalabilidad:} La estructura del proyecto esta diseñada para que la aplicación sea facilmente escalable gracias a la aplicación de buenas prácticas y patrones de diseño.
-\item\textbf{RNF-7 Portabilidad:} La pagina web puede ser accedida desde cualquier navegador. Además, tiene un diseño adaptativo para que sea compatible con multitud de dispositivos independientemente del ancho de la pantalla.
+\item\textbf{RNF-7 Portabilidad:} La página web puede ser accedida desde cualquier navegador. Además, tiene un diseño adaptativo para que sea compatible con multitud de dispositivos independientemente del ancho de la pantalla.
 
 \end{itemize}
 
-
-
-
-
 \section{Especificación de requisitos}
-En este apartado se mostrará un diagrama de los casos de uso basandonos en los requisitos previamente mencionados. Posteriormente, se detallarán cada uno de estos.
+En este apartado se mostrará un diagrama de los casos de uso basándonos en los requisitos previamente mencionados. Posteriormente, se detallarán cada uno de estos.
 
 \newpage
 \begin{landscape}
@@ -106,8 +102,8 @@ Los actores en un diagrama de casos de uso, son aquellos que desempeñan alguna 
 \begin{itemize}
 \item\textbf{Usuario}: Son aquellos que van a utilizar la aplicación y dispondrán de toda la funcionalidad de esta. La aplicación esta diseñada para que el usuario pueda interactuar con ella de una manera sencilla y con una buena experiencia de usuario.
 \item\textbf{Equipo desarrollo/soporte}: En este proyecto, los desarrolladores y el equipo de soporte, también realizan acciones que impactan en el sistema. Esto se debe a que, dado que nuestra web esta constantemente recopilando datos de webs externas, en el caso de que nuevas convocatorias de nuevas universidades se quieran mostrar en la web o que cambie la estructura de la actual web de origen, el equipo de desarrollo y soporte tendrán que realizar labores de tratamiento de datos, estructuración y almacenamiento.
-\item\textbf{Sistema cron}: Este sistema ha sido el encargado de actualizar la base de datos periodicamente según se iban actualizando las convocatorias en las webs de las propias universidades.De esta manera, la información en la web del proyecto, estaba actualizada constantemente.
-\item\textbf{Sistema correo}: Por último, otro de los actores involucrados ha sido el sistema de correo. Este ha permitido el envio de avisos a los usuarios que van a utilizar la web. En este caso, el sistema utilizado ha sido el servidor de correo electrónico SMTP, el cual permite el envío de emails de manera automatizada.
+\item\textbf{Sistema cron}: Este sistema ha sido el encargado de actualizar la base de datos periódicamente según se iban actualizando las convocatorias en las webs de las propias universidades. De esta manera, la información en la web del proyecto, estaba actualizada constantemente.
+\item\textbf{Sistema correo}: Por último, otro de los actores involucrados ha sido el sistema de correo. Este ha permitido el envío de avisos a los usuarios que van a utilizar la web. En este caso, el sistema utilizado ha sido el servidor de correo electrónico SMTP, el cual permite el envío de emails de manera automatizada.
 \end{itemize}
 
 
@@ -127,7 +123,7 @@ Los actores en un diagrama de casos de uso, son aquellos que desempeñan alguna 
 			\def\labelenumi{\arabic{enumi}.}
 			\tightlist
 			\item El equipo de desarrollo examinará la estructura de las webs para su extracción de datos.
-			\item Recopilará los datos más interesantes
+			\item Recopilará los datos más interesantes.
                 \item Se tratarán los datos recopilados y se almacenarán los mismos.
                 \item Los datos se mostrarán de manera actualizada en la web mediante el sistema cron.
 		\end{enumerate}\\
@@ -156,8 +152,8 @@ Los actores en un diagrama de casos de uso, son aquellos que desempeñan alguna 
 			\def\labelenumi{\arabic{enumi}.}
 			\tightlist
 			\item Se obtienen todos los datos.
-			\item Se detectan los datos no válidos o erroneos
-                \item Se detectan que no son de interés.
+			\item Se detectan los datos no válidos o erróneos
+                \item Se detectan los datos que no son de interés.
                 \item Se trabaja con los datos de interés
 		\end{enumerate}\\
 		\textbf{Postcondición}        & Ninguna. \\
@@ -185,8 +181,8 @@ Los actores en un diagrama de casos de uso, son aquellos que desempeñan alguna 
 			\def\labelenumi{\arabic{enumi}.}
 			\tightlist
 			\item Se obtienen los datos de interés.
-			\item Se estructuran los mismos por categorias o importancia.
-                \item Se corrigen las divergencias en cuanto a los formatos
+			\item Se estructuran los mismos por categorías o importancia.
+                \item Se corrigen las divergencias en cuanto a los formatos.
                 \item Se almacenan los mismos de manera correcta.
 		\end{enumerate}\\
 		\textbf{Postcondición}        & La base de datos debe estar disponible. \\
@@ -212,7 +208,7 @@ Los actores en un diagrama de casos de uso, son aquellos que desempeñan alguna 
 		\begin{enumerate}
 			\def\labelenumi{\arabic{enumi}.}
 			\tightlist
-			\item Se configura un servidor para almacenar la base de datos
+			\item Se configura un servidor para almacenar la base de datos.
 			\item Se crean las bases de datos en el servidor.
                 \item La aplicación se conecta con el servidor para transferir sus datos al mismo.
                 \item Se almacenan los datos de manera correcta.
@@ -234,13 +230,13 @@ Los actores en un diagrama de casos de uso, son aquellos que desempeñan alguna 
 		\textbf{Versión}              & 1.0    \\
 		\textbf{Autor}                & Miguel Ubierna Gutiérrez \\
 		\textbf{Requisitos asociados} & RF-1.3 \\
-		\textbf{Descripción}          & La aplicación debe ser capaz de mostrar las ofertas de manera actualizada basandose en las webs sobre las que se extraen los datos. \\
+		\textbf{Descripción}          & La aplicación debe ser capaz de mostrar las ofertas de manera actualizada basándose en las webs sobre las que se extraen los datos. \\
 		\textbf{Precondición}         & Disponer conexión con el servidor de base de datos.\\
 		\textbf{Acciones}             &
 		\begin{enumerate}
 			\def\labelenumi{\arabic{enumi}.}
 			\tightlist
-			\item Se configura un sistema cron para que los datos se actualicen de manera periodica.
+			\item Se configura un sistema cron para que los datos se actualicen de manera periódica.
 			\item El sistema cron ejecuta determinados scripts de la aplicación para que la web este actualizada.
                 \item Se almacenan los datos actualizados en la base de datos.
 		\end{enumerate}\\
@@ -381,11 +377,11 @@ Los actores en un diagrama de casos de uso, son aquellos que desempeñan alguna 
 			\def\labelenumi{\arabic{enumi}.}
 			\tightlist
 			\item El usuario accede a los detalles de una convocatoria desde el listado general.
-                \item Dentro de la ventana detalles habrá un enlace que redigirá al usuario a la propia web de la universidad correspondiente.
+                \item Dentro de la ventana detalles habrá un enlace que redirigirá al usuario a la propia web de la universidad correspondiente.
                 \item El usuario visualizará la convocatoria correspondiente y podrá ofrecerse como candidato realizando los trámites requeridos por la universidad.
                 \item El usuario también podrá acceder desde el correo cuando realiza una suscripción para recibir avisos.                
 		\end{enumerate}\\
-		\textbf{Postcondición}        & Niguna \\
+		\textbf{Postcondición}        & Ninguna \\
 		\textbf{Excepciones}          & Ninguna  \\
 		\textbf{Importancia}          & Alta  \\
 		\bottomrule
@@ -487,7 +483,7 @@ Los actores en un diagrama de casos de uso, son aquellos que desempeñan alguna 
 		\textbf{Versión}              & 1.0    \\
 		\textbf{Autor}                & Miguel Ubierna Gutiérrez \\
 		\textbf{Requisitos asociados} & RF-4.3  \\
-		\textbf{Descripción}          & El sistema de correo enviará archvos ICalendar adjuntos con la fecha de fin de las convocatorias para que los usuarios puedan añadirlo a sus calendarios personales.  \\
+		\textbf{Descripción}          & El sistema de correo enviará archivos ICalendar adjuntos con la fecha de fin de las convocatorias para que los usuarios puedan añadirlo a sus calendarios personales.  \\
 		\textbf{Precondición}         & Ninguna.\\
 		\textbf{Acciones}             &
 		\begin{enumerate}
@@ -522,7 +518,7 @@ Los actores en un diagrama de casos de uso, son aquellos que desempeñan alguna 
 			\def\labelenumi{\arabic{enumi}.}
 			\tightlist
                 \item El usuario abre el archivo con su correo.
-                \item El evento se añadira a los servicios de calendario más populares como Google Calendar o Outlook.
+                \item El evento se añadirá a los servicios de calendario más populares como Google Calendar o Outlook.
 		\end{enumerate}\\
 		\textbf{Postcondición}        & Deberá aparecer un nuevo evento en el calendario personal del usuario. \\
 		\textbf{Excepciones}          & Si el formato no es compatible, le aparecerá una excepción al usuario. \\
