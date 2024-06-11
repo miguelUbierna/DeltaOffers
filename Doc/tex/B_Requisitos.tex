@@ -2,26 +2,25 @@
 
 \section{Introducción}
 
-Los especificación de requisitos en un proyecto software consiste en describir cómo se va a comportar el sistema que ha sido desarrollado. En este apartado, se detallarán los distintos casos de uso los cuales describen las distintas acciones o actividades que va a realizar un actor para que finalmente se lleve a cabo algún proceso \cite{especificacionrequisitos:latex}.
+La especificación de requisitos en un proyecto software consiste en describir cómo se va a comportar el sistema que ha sido desarrollado. En este apartado, se detallarán los distintos casos de uso los cuales describen las distintas acciones o actividades que va a realizar un actor para que finalmente se lleve a cabo algún proceso ~\cite{especificacionrequisitos:latex}.
 
-Tanto los requisitos como los casos de uso son muy importantes en este tipo de proyectos dado que se detallan las funciones que va a realizar el sistema de manera concisa. Además, esto mejora enormemente la comunicación entre el equipo que ha desarrollado el software y el cliente o usuarios finales. Por último, la especificación de estos requisitos cuando se inicia un proyecto, ayuda a localizar los posibles inconvenientes con los que se puede encontrar el equipo de desarrollo a lo largo del mismo.
+Tanto los requisitos como los casos de uso son muy importantes en este tipo de proyectos dado que se detallan las funciones que va a realizar el sistema de manera concisa. Además, esto mejora enormemente la comunicación entre el equipo que ha desarrollado el software y el cliente o usuarios finales. Por último, la especificación de estos requisitos cuando se inicia un proyecto ayuda a localizar los posibles inconvenientes con los que se puede encontrar el equipo de desarrollo a lo largo del mismo.
 
 \section{Objetivos generales}
 
-En este apartado se van a comentar cuales han sido los objetivos del proyecto, algunos de ellos fueron propuestos en las fases iniciales del proyecto, sin embargo, muchos otros se han añadido después para mejorar la funcionalidad de la aplicación web y que esta sea más completa y de mejor calidad. Los objetivos en su totalidad, han sido los siguientes:
+En este apartado se van a comentar cuales han sido los objetivos del proyecto, algunos de ellos fueron propuestos en las fases iniciales del proyecto, sin embargo, muchos otros se han añadido después para mejorar la funcionalidad de la aplicación web y que esta sea más completa y de mejor calidad. Los objetivos en su totalidad han sido los siguientes:
 
 \begin{itemize}
-\item En las primeras iteraciones, como es lógico, se invirtió gran parte del tiempo a la planificación y estructuración del proyecto.
 
 \item Recopilación de convocatorias de Personal Docente Investigador y Personal de Administración y Servicios de las Universidades públicas de Castilla y León de sus respectivas páginas web. 
 
-\item Interpretar los datos obtenidos, tratamiento de los mismos y almacenarlos de manera segura.
+\item Interpretar los datos obtenidos, tratamiento de estos y almacenarlos de manera segura.
 
-\item Proporcionar a los usuarios interesados en este tipo de ofertas, una web unificada que listase todas estas convocatorias con un formato unificado. Además, esta web mejorará en usabilidad y en funcionalidad a las webs en las que las universidades publican sus convocatorias.
+\item Proporcionar a las personas interesadas en este tipo de ofertas, una web unificada que listase todas estas convocatorias con un formato unificado. Además, esta web mejorará en usabilidad y en funcionalidad a las webs en las que las universidades publican sus convocatorias.
 
-\item Proporcionar el acceso a información mas detallada de estas convocatorias junto con un enlace que te redirecciona a la web original.
+\item Proporcionar el acceso a información más detallada de estas convocatorias junto con un enlace que te redirige a la web original.
 
-\item Permitir que los usuarios puedan recibir correos con un archivo adjunto para que puedan añadir las convocatorias a sus respectivos calendarios.
+\item Permitir que las personas puedan recibir correos con un archivo adjunto para que puedan añadir las convocatorias a sus respectivos calendarios.
 
 \end{itemize}
 
@@ -39,32 +38,32 @@ Una vez mencionados los objetivos, se enumerarán los requisitos funcionales y n
 \item\textbf{RF-1.1.1 Estructuración de datos}: La aplicación debe estructurar los datos obtenidos para que estos tengan un formato y estructura uniforme.
 \end{itemize}
 \item\textbf{RF-1.2 Almacenamiento de datos}: La aplicación debe almacenar los datos recopilados de forma segura en una base de datos.
-\item\textbf{RF-1.3 Actualización de los datos}: Los datos mostrados en la aplicación deben de ser actualizados periodicamente con las últimas actualizaciones en las webs de origen.
+\item\textbf{RF-1.3 Actualización de los datos}: Los datos mostrados en la aplicación deben de ser actualizados periódicamente con las últimas actualizaciones en las webs de origen.
 \end{itemize}
 \end{itemize}
 
 \begin{itemize}
 \item\textbf{RF-2 Visualización de las convocatorias}: La aplicación tiene que ser capaz de mostrar la información de las distintas convocatorias.
 \begin{itemize}
-\item\textbf{RF-2.1 Mostrar listado maestro de las convocatorias}: La aplicación debe de listar en una paágina \textit{maestra} la información esencial y descriptiva de cada convocatoria, esto se realizará de manera paginada.
+\item\textbf{RF-2.1 Mostrar listado maestro de las convocatorias}: La aplicación debe de listar en una página \textit{maestra} la información esencial y descriptiva de cada convocatoria, esto se realizará de manera paginada.
 \item\textbf{RF-2.2 Aplicación de filtros}: La web tiene que permitir la aplicación de filtros para que los usuarios puedan acceder más rápido a las convocatorias de interés.
 \item\textbf{RF-2.3 Mostrar Detalles}: La aplicación debe de tener páginas \textit{detalle} con los detalles de las convocatorias que el usuario selecciona.
 
 \end{itemize}
 
-\item\textbf{RF-3 Acceso al portal de convocatorias de las universidades}: La aplicación tiene que permitir al usuario acceder mediante un enlace en la página de detalles a las paginas webs propias de cada universidad.
+\item\textbf{RF-3 Acceso al portal de convocatorias de las universidades}: La aplicación tiene que permitir al usuario acceder mediante un enlace en la página de detalles a las páginas webs propias de cada universidad.
 
 \item\textbf{RF-4 Activar avisos}: El usuario debe poder activar avisos en las convocatorias que le interesen.
 
 \begin{itemize}
 \item\textbf{RF-4.1 Suscripción a avisos por correo}: El usuario debe poder suscribirse a recibir avisos por medio del correo electrónico.
 \begin{itemize}
-\item\textbf{RF-4.1.1 Comprobación correo válido }: La aplicación debe comprobar si el correo con el que el usuario se ha suscrito es válido.
+\item\textbf{RF-4.1.1 Comprobación correo válido}: La aplicación debe comprobar si el correo con el que el usuario se ha suscrito es válido.
 \end{itemize}
 \item\textbf{RF-4.2 Recibir avisos}: La aplicación debe enviar avisos por correo de las convocatorias que el usuario desea y el usuario deberá recibir estos.
 \item\textbf{RF-4.3 Recibir archivos ICalendar adjuntos}: La aplicación debe generar un archivo ICalendar con la fecha fin de las convocatorias y adjuntarlo en el correo enviado al usuario.
 \begin{itemize}
-\item\textbf{RF-4.3.1 Compatibilidad ICalendar con principales servicios de calendario}: La aplicación debe proporcionar un archivo de extension ".ics" que debe de ser compatible con Outlook, Google Calendar y otros.
+\item\textbf{RF-4.3.1 Compatibilidad ICalendar con principales servicios de calendario}: La aplicación debe proporcionar un archivo de extensión \textit{".ics"} que debe de ser compatible con Outlook, Google Calendar y otros.
 \end{itemize}
 \item\textbf{RF-4.4 Acceso al portal de convocatorias de las universidades}: En el correo electrónico que recibe el usuario se debe permitir acceder mediante un enlace en la página de detalles a las páginas webs propias de cada universidad.
 \end{itemize}
@@ -74,13 +73,13 @@ Una vez mencionados los objetivos, se enumerarán los requisitos funcionales y n
 \textbf{Requisitos no funcionales:}
 
 \begin{itemize}
-\item\textbf{RNF-1 Rendimiento:} Los tiempos de respuesta son aceptables contando que se está utilizando un servidor web gratuito. La aplicación siempre responde ante las peticiones correctamente aunque el tiempo de respuesta en ocasiones no sea inmediato.
+\item\textbf{RNF-1 Rendimiento:} Los tiempos de respuesta son aceptables contando que se está utilizando un servidor web gratuito. La aplicación siempre responde ante las peticiones correctamente, aunque el tiempo de respuesta en ocasiones no sea inmediato.
 \item\textbf{RNF-2 Seguridad:} Los
 datos obtenidos serán almacenados de manera segura sin que se pueda acceder de manera no autorizada. 
-\item\textbf{RNF-3 Usabilidad:} La experiencia del usuario al interactuar con el sistema es buena. La web es intuitiva y facil de utilizar. La curva de aprendizaje es muy pequeña. 
-\item\textbf{RNF-4 Disponibilidad:} La aplicación web esta disponible para los usuarios siempre y cuando tengan conexión a internet.
-\item\textbf{RNF-5 Mantenibilidad:} La aplicación web será facil de mantener siempre y cuando la estructura HTML de las webs de las que se extraen los datos sea la misma. En el caso de que no, la web necesitará de soporte. La implementación de test unitarios facilita enormemente este aspecto.
-\item\textbf{RNF-6 Escalabilidad:} La estructura del proyecto esta diseñada para que la aplicación sea facilmente escalable gracias a la aplicación de buenas prácticas y patrones de diseño.
+\item\textbf{RNF-3 Usabilidad:} La experiencia del usuario al interactuar con el sistema es buena. La web es intuitiva y fácil de utilizar. La curva de aprendizaje es muy pequeña. 
+\item\textbf{RNF-4 Disponibilidad:} La aplicación web está disponible para los usuarios siempre y cuando tengan conexión a internet.
+\item\textbf{RNF-5 Mantenibilidad:} La aplicación web será fácil de mantener siempre y cuando la estructura HTML de las webs de las que se extraen los datos sea la misma. En el caso de que no, la web necesitará de soporte. La implementación de test unitarios facilita enormemente este aspecto.
+\item\textbf{RNF-6 Escalabilidad:} La estructura del proyecto está diseñada para que la aplicación sea fácilmente escalable gracias a la aplicación de buenas prácticas y patrones de diseño.
 \item\textbf{RNF-7 Portabilidad:} La página web puede ser accedida desde cualquier navegador. Además, tiene un diseño adaptativo para que sea compatible con multitud de dispositivos independientemente del ancho de la pantalla.
 
 \end{itemize}
@@ -97,13 +96,13 @@ En este apartado se mostrará un diagrama de los casos de uso basándonos en los
 \newpage
 
 \subsection{Actores}
-Los actores en un diagrama de casos de uso, son aquellos que desempeñan alguna función dentro del sistema. Los actores no tienen porque ser una sola persona sino también un equipo o un sistema externo. En el caso de nuestro sistema, hemos encontrado gran diversidad en cuanto a los actores:
+Los actores en un diagrama de casos de uso, son aquellos que desempeñan alguna función dentro del sistema. Los actores no tienen por qué ser una sola persona sino también un equipo o un sistema externo. En el caso de nuestro sistema, hemos encontrado gran diversidad en cuanto a los actores:
 
 \begin{itemize}
-\item\textbf{Usuario}: Son aquellos que van a utilizar la aplicación y dispondrán de toda la funcionalidad de esta. La aplicación esta diseñada para que el usuario pueda interactuar con ella de una manera sencilla y con una buena experiencia de usuario.
-\item\textbf{Equipo desarrollo/soporte}: En este proyecto, los desarrolladores y el equipo de soporte, también realizan acciones que impactan en el sistema. Esto se debe a que, dado que nuestra web esta constantemente recopilando datos de webs externas, en el caso de que nuevas convocatorias de nuevas universidades se quieran mostrar en la web o que cambie la estructura de la actual web de origen, el equipo de desarrollo y soporte tendrán que realizar labores de tratamiento de datos, estructuración y almacenamiento.
+\item\textbf{Usuario}: Son aquellos que van a utilizar la aplicación y dispondrán de toda la funcionalidad de esta. La aplicación está diseñada para que el usuario pueda interactuar con ella de una manera sencilla y con una buena experiencia de usuario.
+\item\textbf{Equipo desarrollo/soporte}: En este proyecto, los desarrolladores y el equipo de soporte, también realizan acciones que impactan en el sistema. Esto se debe a que, dado que nuestra web está constantemente recopilando datos de webs externas, en el caso de que nuevas convocatorias de nuevas universidades se quieran mostrar en la web o que cambie la estructura de la actual web de origen, el equipo de desarrollo y soporte tendrán que realizar labores de tratamiento de datos, estructuración y almacenamiento.
 \item\textbf{Sistema cron}: Este sistema ha sido el encargado de actualizar la base de datos periódicamente según se iban actualizando las convocatorias en las webs de las propias universidades. De esta manera, la información en la web del proyecto, estaba actualizada constantemente.
-\item\textbf{Sistema correo}: Por último, otro de los actores involucrados ha sido el sistema de correo. Este ha permitido el envío de avisos a los usuarios que van a utilizar la web. En este caso, el sistema utilizado ha sido el servidor de correo electrónico SMTP, el cual permite el envío de emails de manera automatizada.
+\item\textbf{Sistema de correo}: Por último, otro de los actores involucrados ha sido el sistema de correo. Este ha permitido el envío de avisos a los usuarios que van a utilizar la web. En este caso, el sistema utilizado ha sido el servidor de correo electrónico SMTP, el cual permite el envío de emails de manera automatizada.
 \end{itemize}
 
 
@@ -125,7 +124,7 @@ Los actores en un diagrama de casos de uso, son aquellos que desempeñan alguna 
 			\item El equipo de desarrollo examinará la estructura de las webs para su extracción de datos.
 			\item Recopilará los datos más interesantes.
                 \item Se tratarán los datos recopilados y se almacenarán los mismos.
-                \item Los datos se mostrarán de manera actualizada en la web mediante el sistema cron.
+                \item Los datos se mostrarán de manera actualizada en la web mediante el sistema \textit{cron}.
 		\end{enumerate}\\
 		\textbf{Postcondición}        & La base de datos será actualizada. \\
 		\textbf{Excepciones}          & Fallo en las solicitudes HTTP a las correspondientes webs. \\
@@ -214,7 +213,7 @@ Los actores en un diagrama de casos de uso, son aquellos que desempeñan alguna 
                 \item Se almacenan los datos de manera correcta.
 		\end{enumerate}\\
 		\textbf{Postcondición}        & El servidor debe estar disponible. \\
-		\textbf{Excepciones}          & El servidor no esta disponible, no se cargarán las convocatorias.  \\
+		\textbf{Excepciones}          & El servidor no está disponible, no se cargarán las convocatorias.  \\
 		\textbf{Importancia}          & Alta.  \\
 		\bottomrule
 	\end{tabularx}
@@ -236,12 +235,12 @@ Los actores en un diagrama de casos de uso, son aquellos que desempeñan alguna 
 		\begin{enumerate}
 			\def\labelenumi{\arabic{enumi}.}
 			\tightlist
-			\item Se configura un sistema cron para que los datos se actualicen de manera periódica.
-			\item El sistema cron ejecuta determinados scripts de la aplicación para que la web este actualizada.
+			\item Se configura un sistema \textit{cron} para que los datos se actualicen de manera periódica.
+			\item El sistema \textit{cron} ejecuta determinados \textit{scripts} de la aplicación para que la web este actualizada.
                 \item Se almacenan los datos actualizados en la base de datos.
 		\end{enumerate}\\
 		\textbf{Postcondición}        & Las ofertas estarán actualizadas. \\
-		\textbf{Excepciones}          & El servidor no esta disponible, no se cargarán las nuevas convocatorias.  \\
+		\textbf{Excepciones}          & El servidor no está disponible, no se cargarán las nuevas convocatorias.  \\
 		\textbf{Importancia}          & Alta.  \\
 		\bottomrule
 	\end{tabularx}
@@ -294,10 +293,10 @@ Los actores en un diagrama de casos de uso, son aquellos que desempeñan alguna 
 			\tightlist
 			\item El usuario accede a la página maestra de la aplicación.
                 \item Se cargan las respectivas convocatorias de las bases de datos.
-			\item Se mostrará un listado paginado de las convocatorias con los atributos mas descriptivos de las mismas como la categoría, plazo y universidad.
+			\item Se mostrará un listado paginado de las convocatorias con los atributos más descriptivos de las mismas como la categoría, plazo y universidad.
 		\end{enumerate}\\
 		\textbf{Postcondición}        & Ninguna. \\
-		\textbf{Excepciones}          & El servidor que aloja la base de datos no esta disponible, no se cargarán las convocatorias.  \\
+		\textbf{Excepciones}          & El servidor que aloja la base de datos no está disponible, no se cargarán las convocatorias.  \\
 		\textbf{Importancia}          & Alta.  \\
 		\bottomrule
 	\end{tabularx}
@@ -320,9 +319,9 @@ Los actores en un diagrama de casos de uso, son aquellos que desempeñan alguna 
 		\begin{enumerate}
 			\def\labelenumi{\arabic{enumi}.}
 			\tightlist
-			\item Se mostrará un listado paginado de las convocatorias con los atributos mas descriptivos de las mismas como la categoría, plazo y universidad.
+			\item Se mostrará un listado paginado de las convocatorias con los atributos más descriptivos de las mismas como la categoría, plazo y universidad.
                 \item El usuario podrá filtrar por estos campos.
-                \item Una vez se pulse al botón 'Filtrar' se aplicarán los filtros.
+                \item Una vez se pulse el botón 'Filtrar' se aplicarán los filtros.
                 \item Se mostrarán las convocatorias filtradas y paginadas.
 		\end{enumerate}\\
 		\textbf{Postcondición}        & Las convocatorias devueltas deben de ser solo las que cumplen el filtro. \\
@@ -427,7 +426,7 @@ Los actores en un diagrama de casos de uso, son aquellos que desempeñan alguna 
 		\textbf{Versión}              & 1.0    \\
 		\textbf{Autor}                & Miguel Ubierna Gutiérrez \\
 		\textbf{Requisitos asociados} & RF-4.1, RF-4.1.1  \\
-		\textbf{Descripción}          & Permite que el usuario se suscriba al sistema de avisos de la app para recibir avisos de las convocatorias que el desee.  \\
+		\textbf{Descripción}          & Permite que el usuario se suscriba al sistema de avisos de la \textit{app} para recibir avisos de las convocatorias que el desee.  \\
 		\textbf{Precondición}         & Ninguna.\\
 		\textbf{Acciones}             &
 		\begin{enumerate}
@@ -462,7 +461,7 @@ Los actores en un diagrama de casos de uso, son aquellos que desempeñan alguna 
 			\def\labelenumi{\arabic{enumi}.}
 			\tightlist
 			\item El usuario acepta la recepción de emails para ser avisado de una determinada convocatoria.
-                \item Si el email es valido, se enviará el aviso.
+                \item Si el email es válido, se enviará el aviso.
                 \item Se mostrará una alerta en la que indica que el aviso ha sido enviado correctamente.
 		\end{enumerate}\\
 		\textbf{Postcondición}        & Ninguna. \\
@@ -511,7 +510,7 @@ Los actores en un diagrama de casos de uso, son aquellos que desempeñan alguna 
 		\textbf{Versión}              & 1.0    \\
 		\textbf{Autor}                & Miguel Ubierna Gutiérrez \\
 		\textbf{Requisitos asociados} & RF-4.3.1  \\
-		\textbf{Descripción}          & El archivo de extension .ics deberá ser compatible con los principales servicios de calendario.\\
+		\textbf{Descripción}          & El archivo de extension \textit{.ics} deberá ser compatible con los principales servicios de calendario.\\
 		\textbf{Precondición}         & El archivo ICalendar se ha debido de generar correctamente.\\
 		\textbf{Acciones}             &
 		\begin{enumerate}
